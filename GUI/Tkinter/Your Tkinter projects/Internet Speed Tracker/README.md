@@ -19,17 +19,17 @@ The only thing user has to do is run the program and click on the button "Get Sp
 
 ## Screenshots:
 
-Logo of the application
+**Application Logo**
 
 <img src="Images/logo.gif" /><br>
 
 
-First Screen
+**Start Screen**
 
 <img src="Images/started.png" /><br>
 
 
-Output Screen
+**Result Screen**
 
 <img src="Images/result.png" /><br>
 
