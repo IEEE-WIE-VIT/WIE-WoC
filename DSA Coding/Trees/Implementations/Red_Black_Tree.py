@@ -1,6 +1,5 @@
 import collections
 import Binary_Search_Tree
-
 Node = Binary_Search_Tree.Node
 BSTree = Binary_Search_Tree.
 
