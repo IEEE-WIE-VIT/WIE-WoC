@@ -21,17 +21,17 @@ The only thing user has to do is run the program and click on the button "Get Sp
 
 Logo of the application
 
-<img src="Media/logo.gif" /><br>
+<img src="Images/logo.gif" /><br>
 
 
 First Screen
 
-<img src="Media/started.png" /><br>
+<img src="Images/started.png" /><br>
 
 
 Output Screen
 
-<img src="Media/result.png" /><br>
+<img src="Images/result.png" /><br>
 
 
 ## Author
