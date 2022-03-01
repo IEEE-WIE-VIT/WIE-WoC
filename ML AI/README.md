@@ -1,9 +1,7 @@
 # KaggleTitanicML
 This repository contains my solution to the Titanic : Machine Learning from Disaster competition on Kaggle. This repository contains the dataset(both train and test) and my notebook for the same. 
 
-This is my Kaggle notebook - https://www.kaggle.com/nirmalya8/nirmatitanic . This notebook is the Version 3 of 17 of the link given above. I got an accuracy of 0.78947 on the test set. 
 
-![](accuracy.jpeg)
 
 # Contents of the Notebook
 The notebook contains code,roughly, under the following points -
