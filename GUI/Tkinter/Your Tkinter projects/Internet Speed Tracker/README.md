@@ -21,12 +21,12 @@ The only thing user has to do is run the program and click on the button "Get Sp
 
 **Application Logo**
 
-<img src="Images/logo.gif" /><br>
+<img src="Images/logo.gif"/><br>
 
 
 **Start Screen**
 
-<img src="Images/started.png" /><br>
+<img src="Images/started.png"/><br>
 
 
 **Result Screen**
