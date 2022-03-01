@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- from https://www.favicon.cc/?action=icon&file_id=960464 -->
+    <link rel="icon" type="image/png" href="{{url_for('static', filename='favicon.ico')}}" />
+    <meta name="apple-mobile-web-app-title">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>TODO app</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Short+Stack&display=swap');
+
+        body {
+            max-width: 800px;
+            margin: auto;
+            padding: 1em;
+            font-family: 'Short Stack', cursive;
+            font-size: 1.2em;
+        }
+
+        @media only screen and (max-width: 600px) {
+            body {
+                font-size: 0.7em;
+            }
+        }
+
+        h2 {
+            margin-top: 2em;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        td, th {
+            padding: 0.35em;
+        }
+    </style>
+    <link rel="stylesheet" href="{{url_for('static', filename='doodle.css')}}" />
+</head>
+
+<body class="doodle">
+
+    <main>
+        <h1>TODO app</h1>
+        <p>A simple TODO app.</p>
+        <p>Click on the status to change it :)</p>
+        <br/>
+        <p>Add a new todo item:</p>
+        <form action="{{ url_for('add') }}" method="POST"> 
+            <input type="text" name="todoitem" placeholder="Enter todo">
+            <input type="submit" name="submit" value="Add Item">
+        </form> 
+        <table>
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>status</th>
+                </tr>
+            </thead>
+            <!-- add jinja2 syntax -->
+            <tbody>
+                {% for todo in incomplete %}
+                <tr>
+                    <td>{{ todo.text }}</td>
+                    <td><a style="color: red;" href="{{ url_for('complete', id=todo.id) }}">pending</a></td>
+                </tr>
+                {% endfor %}
+                {% for todo in complete %}
+                <tr>
+                    <td>{{ todo.text }}</td>
+                    <td><a href="{{ url_for('incomplete', id=todo.id) }}">done</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+</body>
+
+</html>
