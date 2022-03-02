@@ -1,0 +1,209 @@
+.our_team{
+  overflow-x: hidden;
+  color: whitesmoke;
+}
+
+.our_team .cover{
+    background: url("wallpaperbetter.com_1920x1080.jpg");
+    color:whitesmoke;
+}
+.our_team .maintext{
+    padding-top: 100px;
+}
+.our_team .mute{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color:rgb(194, 192, 192);
+}
+.our_team .cover h3{
+    padding-bottom: 50px;
+}
+.our_team .col-md-12 h2{
+    padding-top:50px;
+}
+.our_team .col-md-3 h3{
+    padding-top:0px;
+    font-weight:600 ;
+}
+.our_team .col-md-3 p{
+    font-style: oblique;
+    font-size:18px;
+}
+.our_team .customer form{
+    padding-top:100px;
+}
+
+
+/*blog*/
+.our_team .onee{
+    background: url("wallpaperbetter.com_1920x1080.jpg");
+}
+.our_team .main
+{
+    padding-top: 3%;
+   
+}
+.our_team .blog{
+    position:static;
+}
+
+.our_team .one
+{
+ background-color:
+ #1B4131;
+ text-align: center;
+ border: solid 0.2rem white;
+ box-shadow:
+0 0 0.6rem 0.3rem #82B545;  /* inner white */
+ max-width: 28rem;
+ max-height: 40rem;
+  padding: 5%;
+  margin: auto;
+  transition: 0.2s all ease-in-out;
+}
+.our_team .one:hover
+{
+ transform: scale(1.08);
+ justify-content: center;
+ background-color:black;
+ 
+}
+.our_team .two:hover{
+ transform: scale(1.08);
+ background-color:black;
+}
+.our_team .three:hover
+{
+ transform: scale(1.08);
+ background-color:black;
+}
+.our_team .one img:hover
+{
+ transform: scale(1.07);
+}
+.our_team .two img:hover{
+ transform: scale(1.07);
+}
+.our_team .three img:hover
+{
+ transform: scale(1.07);
+}
+.our_team .two{
+ background-color:
+ #1B4131;
+ text-align: center;
+ border: solid 0.2rem white;
+ box-shadow:
+0 0 0.6rem 0.3rem #82B545;  /* inner white */
+ max-width: 28rem;
+ max-height: 40rem;
+  padding: 5%;
+  margin: auto;
+  transition: 0.2s all ease-in-out;
+}
+.our_team .three
+{
+ background-color: #1B4131;
+ text-align: center;
+ border: solid 0.2rem white;
+ box-shadow:
+0 0 0.6rem 0.3rem #82B545;  /* inner white */
+ max-width: 28rem;
+ max-height: 40rem;
+  padding: 5%;
+  margin: auto;
+  transition: 0.2s all ease-in-out;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+}
+.our_team .one img
+{
+
+text-align: center;
+padding: 1%;
+max-width: 100%;
+max-height: 100%;
+border-radius: 2%;
+transition: 0.2s all ease-in-out;
+}
+.our_team .two img
+{
+text-align: center;
+padding: 1%;
+max-width: 100%;
+max-height: 100%;
+border-radius: 2%;
+transition: 0.2s all ease-in-out;
+
+
+}
+.our_team .three img
+{
+ text-align: center;
+ padding: 1%;
+ max-width: 100%;
+ max-height: 100%;
+ border-radius: 2%;
+ transition: 0.2s all ease-in-out;
+}
+/*About Us*/
+.our_team .top{
+    background: url("wallpaperbetter.com_1920x1080.jpg");
+    padding-top:50px;
+    padding-bottom:50px;
+}
+.our_team .info{
+    text-align: center;
+    padding:50px 50px 50px 50px;
+    font-size:22px;
+}
+
+.our_team .row {
+  --bs-gutter-x: 0;
+  width: 100vw;
+  justify-content: space-around;
+}
+
+.our_team .container h1 {
+    font-size: 6vmin;
+  }
+  
+  .our_team .team {
+    padding: 10vmin 4vmin;
+  }
+  
+  .our_team .card {
+    height: 99%; 
+    background-image: linear-gradient(315deg, #6e72fc 0%, #ad1deb 74%);
+    max-width:22em;
+    border-radius: 2%;
+  }
+  
+  .our_team .card .card-text {
+    padding: 0.5em;
+  }
+  
+  .our_team .card-body > a {
+    font-size: 1.5em;
+  }
+  
+  .our_team .carousel-item {
+    padding-left: 3rem;
+  }
+  
+  .our_team .border-radius {
+    border-radius: 340px;
+    width: 60%;
+  }
+  .our_team .beautify{
+    background: url("wallpaperbetter.com_1920x1080.jpg");
+    padding-top:50px;
+    padding-bottom:50px;
+    font-weight: 1000;
+  }
+  .our_team .beautify h1{
+    color:whitesmoke;
+    text-align: center;
+    justify-content: center;
+  }
