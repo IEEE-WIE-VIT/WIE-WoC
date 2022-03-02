@@ -17,7 +17,7 @@ This is a Python Script which take two images from user and make a collage of it
 
 ## Sample Output: 
 
-![Final]()
+![Final](https://github.com/prathimacode-hub/WIE-WoC/blob/imageprocessing/ImageProcessing/Your%20Image%20Processing%20Projects/Collage%20Maker/Images/Python.jpg)
 
 ## Author
 
