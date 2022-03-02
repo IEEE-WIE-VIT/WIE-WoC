@@ -1,5 +1,22 @@
 # About Flask
 
+Flask is a web application framework in Python. It is minimal enough to call it as a *micro framework*. It provides basics core functionalities and has a lot of extensions like Flask SQLAlchemy, Flask Mail, Flask-RESTPlus, etc.
+
+Here's a list of [flask resources and extensions](https://github.com/humiaozuzu/awesome-flask)
+
+## How it compares to other frameworks
+
+One popular question that comes across many developer's minds is "Flask or Django?".
+
+Flask is really lightweight compared to django. It lacks functionalities like built in ORM(Object-relational mapping), authentication and admin panel.
+
+### What should you use?
+
+Flask is popular for small and medium size projects like Single Page Applications(SPAs), portfolio website and personal blog.
+
+Whereas, Django is more suitible for applications like an e-commerce website.
+
+If you're just starting in python and programming in general, then Flask is a great choice as it has a much lesser learning curve compared to django.
 
 ## How to get started
 
