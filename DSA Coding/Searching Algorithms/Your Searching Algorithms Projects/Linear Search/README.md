@@ -1,48 +1,40 @@
-# Script Name
-Linear Search Algorithm. 
+# Linear Search Algorithm 
 
-## Aim
+## Aim:
+
 To write a program for Linear search.
 
 
-## Purpose
+## Purpose:
 
-To get a understanding about linear search.
+To get a understanding about linear search algorithm practically
 
 
-## Short description of package/script
+## Short description of package/script:
 
 - It is a python program for linear search Algorithm. 
 - It is written in a way that it takes user input.
-- It can be used to search an element from an array,list etc.
+- It can be used to search an element from an array, list etc.
 
+## Workflow of the Project:
 
-## Workflow of the Project
+- First a function is written to perform linear Search, which traverses the whole array and then finds the element.
+- Then outside the function user is prompted to input array size, array elements and element to be searched.
 
-- First a function is written to perform linear Search,which 
-traverses the whole array and then finds the element.
-- Then outside the function user is prompted to input array size,array
-elements and element to be searched.
+## Detailed explanation of script, if needed:
 
-
-
-## Detailed explanation of script, if needed
-Linear Search is one of the easiest searching algorithm. 
-The main aim of a searching algorithm is to search for a 
-desired element in the whole array. Linear Search sequentially 
+Linear Search is one of the easiest searching algorithm. The main aim of a searching algorithm is to search for a desired element in the whole array. Linear Search sequentially 
 searches for an element in an array.
 
-## Algorithm 
-* In Linear Search, we start from the 0th index of the array,
-we compare each element with the key (desired element).
+## Algorithm:
 
-* If the key is same as the element of array ,we return the index
-of that element.
+* In Linear Search, we start from the 0th index of the array, we compare each element with the key (desired element).
 
-* If the key does not match any element then ,we return -1.
+* If the key is same as the element of array, we return the index of that element.
 
+* If the key does not match any element then, we return -1.
 
-## Examples
+## Example:
 ```
 We need to search 6 in the array.
 
@@ -55,7 +47,9 @@ We need to search 6 in the array.
 ```
 
 ## Output
+
 ![](Images/output.jpg)
 
-### Author(s)
-[Siddhi Bhanushali](https://github.com/siddhi-244)
+### Author
+
+Prathima Kadari
