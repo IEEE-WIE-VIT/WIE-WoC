@@ -1,5 +1,18 @@
 # About Flask
 
+## Table of contents
+- [About Flask](#about-flask)
+  - [Table of contents](#table-of-contents)
+  - [What is Flask?](#what-is-flask)
+  - [How it compares to other frameworks](#how-it-compares-to-other-frameworks)
+    - [What should you use?](#what-should-you-use)
+  - [How to get started](#how-to-get-started)
+    - [Setup](#setup)
+    - [Quick start](#quick-start)
+  - [Project layout](#project-layout)
+
+## What is Flask?
+
 Flask is a web application framework in Python. It is minimal enough to call it as a *micro framework*. It provides basics core functionalities and has a lot of extensions like Flask SQLAlchemy, Flask Mail, Flask-RESTPlus, etc.
 
 Here's a list of [flask resources and extensions](https://github.com/humiaozuzu/awesome-flask)
