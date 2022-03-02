@@ -33,9 +33,9 @@ This image processing script helps the user to instantly beautify their image an
 
 # Screenshots
 
-![Image Neon Effect Filter](Images/Screenshot1.jpg)
+![Image Neon Effect Filter](Images/Screenshot1.png)
 
-![Image Neon Effect Filter](Images/Screenshot2.jpg)
+![Image Neon Effect Filter](Images/Screenshot2.png)
 
 # Author
 
