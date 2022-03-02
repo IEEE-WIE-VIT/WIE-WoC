@@ -1,24 +1,13 @@
 """
 Linked List:
-    - Linked List is a collection of node that connected through their
-      references.
+    - Linked List is a collection of node that connected through their references.
     - It is a linear data structure.
     - It provides faster insertion and deletion over array.
 
 Doubly Linked List:
-    Doubly Linked List is type of linked list in which every node bi-directionally
-    connected with each other.
+    Doubly Linked List is type of linked list in which every node bi-directionally connected with each other.
 
-    In our implementation we use 'HEAD' and 'END' dummy nodes known as sentinels,
-    for avoiding special cases in methods. By doing this we ensure every
-    insertion and deletion happens in between 'HEAD' and 'END'. And we're declaring the
-    Node class as protected inside main class.
-
-:URL: https://github.com/prathimacode-hub/PyAlgo-Tree/tree/main/Lists/Doubly%20Linked%20List/doubly_linked_list.py
-:Author: NanthaKumar <nknanthakumar13@gmail.com>
-:Contact: https://github.com/nknantha
-:Date: 2021-07-15
-"""
+    In our implementation we use 'HEAD' and 'END' dummy nodes known as sentinels, for avoiding special cases in methods. By doing this we ensure every insertion and deletion happens in between 'HEAD' and 'END'. And we're declaring the Node class as protected inside main class.
 
 
 class DoublyLinkedList:
@@ -39,7 +28,7 @@ class DoublyLinkedList:
         Non-Public class for storing node.
 
         Attributes:
-            _data  Stores node's data.
+            _data  Stores nodes data.
             _next  Points the next node.
             _prev  Points the previous node.
         """
