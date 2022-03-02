@@ -37,6 +37,20 @@
 - After that download the code file, and run pomodoro_timer.py on local system.
 - Then the script will start running and user can explore it by entering any task, getting the time counter for that task, and working accordingly.
 
+## Screenshots
+
+# SCREENSHOTS :
+
+****
+
+<p align="center">
+  <img width = 1000 src="Images/1.jpg" /><br>
+  <img width = 1000 src="Images/2.jpg" /><br>
+  <img width = 1000 src="Images/3.jpg" /><br>
+  <img width = 1000 src="Images/4.jpg" /><br>
+  <img width = 1000 src="Images/9.jpg" /><br>
+</p>
+
 ## Author
 
 Prathima Kadari
