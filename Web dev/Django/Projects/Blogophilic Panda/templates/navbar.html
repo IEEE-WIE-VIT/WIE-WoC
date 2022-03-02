@@ -1,0 +1,106 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+
+<header class="header-default">
+    
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-xl">
+            <!-- logo  -->
+            <a href="{% url 'home' %}" class="navbar-brand">
+                <img src="{% static 'images/logo.png' %}" alt="" style="height: 75px;">
+            </a>
+
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                   
+                    <li class="nav-item ">
+                        <a href="{% url 'home' %}" class="nav-link ">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'uploading_blogs' %}" class="nav-link">Upload a Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'our_team' %}" class="nav-link">Our Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'contact' %}" class="nav-link">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- right side of header  -->
+            <div class="header-right d-flex">
+                <ul class="navbar-nav collapse navbar-collapse">
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a href="{% url 'profile' profile_slug=user.profile.slug %}" class="dropdown-item">{{ user }}</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'logout' %}" class="dropdown-item">Logout</a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="{% url 'login' %}" class="dropdown-item">Login</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'register' %}" class="dropdown-item">Sign Up</a>
+                    </li>
+                    {% endif %}
+                </ul>
+
+                <!-- buttons  -->
+                <div class="header-buttons">
+                    <button class="search icon-button">
+                        <i class="icon-magnifier"></i>
+                    </button>
+                    <button class="burger-menu icon-button d-inline d-md-none">
+                        <span class="burger-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="canvas-menu d-flex align-items-end flex-column">
+    <button class="btn-close" aria-label="Close" type="button"></button>
+
+    <div class="logo">
+        <img src="images/logo.svg" alt="">
+    </div>
+    <nav>
+        <ul class="vertical-menu">
+            <li class="active"><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'uploading_blogs' %}">Upload a Blog</a></li>
+            <li><a href="{% url 'our_team' %}">Our Team</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+        </ul>
+    </nav>
+</div>
+<!-- search pop up  -->
+<div class="search-popup">
+    <button class="btn-close" aria-label="Close" type="button"></button>
+
+    <div class="search-content">
+        <div class="text-center">
+            <h3 class="mb-4 mt-0">Press ESC to close</h3>
+        </div>
+
+        <form action="{% url 'home' %}" method="POST" class="d-flex search-form">
+            {% csrf_token %}
+            <input type="search" placeholder="Search and press enter ..." aria-label="Search"
+                class="form-control me-2" name="search_keyword">
+            <button class="btn btn-default btn-lg" type="submit">
+                <i class="icon-magnifier"></i>
+            </button>
+        </form>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+  $('nav-link.active').removeClass('active');
+  $('a[href="' + location.pathname + '"]').closest('.nav-link').addClass('active'); 
+});
+</script>

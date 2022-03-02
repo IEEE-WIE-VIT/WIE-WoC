@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<title>Blogophilic Panda | Upload</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/blogs/blog_upload.css' %}"/>
+<div class="row upload_blog">
+    <form method="POST" enctype='multipart/form-data'>
+        {% csrf_token %}
+        <h1 class="upload_title">Upload Your Blog</h1>
+        <fieldset>
+            <label for="name">TITLE</label>
+            <input type="text" id="name" name="blog_title">
+            <label for="category">CATEGORY</label>
+            <div class="select">
+                <select id="category" name="category">
+                <option value="Finance" style="color:black">Finance</option>
+                <option value="Fashion"  style="color:black">Fashion</option>
+                <option value="Politics"  style="color:black">Politics</option>
+                <option value="Sports"  style="color:black">Sports</option>
+                <option value="Travel"  style="color:black">Travel</option>
+                <option value="Lifestyle"  style="color:black">Lifestyle</option>
+                <option value="Science"  style="color:black">Science</option>
+                <option value="Environment"  style="color:black">Environment</option>
+                <option value="Technology"  style="color:black">Technology</option>
+                </select>
+            </div>
+            <label for="content">CONTENT</label>
+            <textarea id="content" name="blog_content"></textarea>
+            <div class="file-upload mw-100" style="margin-top: 2%;">   
+            <div class="image-upload-wrap" style="margin-top: 0px; margin-bottom: 1%;">
+                <input class="file-upload-input" type='file' name="blog_image" onchange="readURL(this);"  />
+                <div class="drag-text">
+                <h4>Drag and drop a file or select add Image</h4>
+                </div>
+            </div>
+            <div class="file-upload-content">
+                <img class="file-upload-image" src="#" alt="your image" />
+                <div class="image-title-wrap">
+                <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+                </div>
+            </div>
+            <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
+        </div>   
+        </fieldset>
+        <button type="submit" class="upload">SUBMIT</button>
+    </form>
+ </div>
+
+<script type="text/javascript" src="{% static 'js/blog_upload.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/blog_upload1.js' %}"></script>
+<script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+{% endblock content %}

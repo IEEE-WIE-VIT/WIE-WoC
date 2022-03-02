@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<title>Blogophilic Panda | Our Team</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/our_team.css' %}">
+<section class="section-4 our_team">
+<div class="row ">
+    <div class="col-md-3 col-sm-12 text-center">
+        <div class="card mr-2 d-inline-block shadow-sm">
+            <div class="card-img-top">
+            <img src="{% static 'images/harsha_img.jpg' %}" class="img-fluid border-radius p-4" alt="">
+            </div>
+            <div class="card-body">
+            <h3 class="card-title">Sai Harsha Varma</h3>
+            <p class="card-text">
+                A technologist and a hardcore programmer with great analytical skills. I'm disciplined and process oriented. I have great interest in solving real time problems and building highly scalable software systems.
+            </p>
+            <a href="https://github.com/saiharshavarma" class="text-white text-decoration-none">GITHUB</a>
+            <p class="text-white">Student at VIT</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-12 text-center">
+    <div class="card mr-2 d-inline-block shadow-sm" style="height: 99%;">
+        <div class="card-img-top">
+            <img src="{% static 'images/Pakhi.jpg' %}" class="img-fluid border-radius p-4" alt="">
+        </div>
+        <div class="card-body">
+            <h3 class="card-title">Pakhi Singh</h3>
+            <p class="card-text">
+            An optimist and a tech enthusiast who is always trying to learn more. I bank on my determination and perseverance to achieve my goals while enjoying the process along the way
+            </p>
+            <a href="https://github.com/Pakhi-singh" class="text-white text-decoration-none">GITHUB</a>
+            <p class="text-white">Student at VIT</p>
+        </div>
+        </div>
+    </div>
+</div>
+</section>
+{% endblock content %}
