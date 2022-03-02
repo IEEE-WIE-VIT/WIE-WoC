@@ -1,2 +1,4 @@
-pip install Pillow
-pip install Numpy
+# Libraries required :
+
+Pillow
+Numpy
