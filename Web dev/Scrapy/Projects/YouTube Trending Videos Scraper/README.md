@@ -34,7 +34,7 @@ The purpose of this project is to get the top 10 trending videos in each of the 
 
 ## Output
 
-![image](Web dev/Scrapy/Projects/YouTube Trending Videos Scraper\Images\Output.PNG)
+![image](Images/Output.PNG)
 
 ## Author
 
