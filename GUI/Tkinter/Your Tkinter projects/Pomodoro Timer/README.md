@@ -6,8 +6,6 @@
 - In this application, user will be able to be more productive in his/her work by working on any task according to Pomodoro timer and taking break accordingly after task.
 - Along with that user will also be to see the status of work after task is done.
 
-****
-
 ## Requirements :
 
 - python 3
@@ -15,8 +13,6 @@
 - from tkinter messagebox module
 - from pil import ImageTk, Image
 - time
-
-****
 
 ## How this Script works :
 
@@ -38,10 +34,6 @@
 - Then the script will start running and user can explore it by entering any task, getting the time counter for that task, and working accordingly.
 
 ## Screenshots
-
-# SCREENSHOTS :
-
-****
 
 <p align="center">
   <img width = 1000 src="Images/1.jpg" /><br>
