@@ -1,7 +1,6 @@
 """
 Queue ADT:
-- Queue is a linear data structure in which insertion and deletion
-performed based on FIFO principle.
+- Queue is a linear data structure in which insertion and deletion performed based on FIFO principle.
 - FIFO: First In First Out.
 
 Linked Queue:
@@ -10,8 +9,7 @@ Linked Queue:
 - It manages every enqueue() and dequeue() operation run in O(1) time.
 
 Implementation:
-- In our implementation we use head and trail variables that respectively
-stores header and trailer of linked queue.
+- In our implementation we use head and trail variables that respectively stores header and trailer of linked queue.
 - It is used for easy enqueue() and dequeue() operation.
 - There is no upper limit condition, because of linked structure.
 
@@ -26,10 +24,6 @@ Contents:
     - peek(): Return the first element without deleting it.
     - reverse(): Reverses the queue.
 
-:URL: https://github.com/prathimacode-hub/PyAlgo-Tree/tree/main/Queues/Linked%20Queue/linked_queue.py
-:Author: NanthaKumar <nknanthakumar13@gmail.com>
-:Contact: https://github.com/nknantha
-:Date: 2021-07-25
 """
 
 
