@@ -1,0 +1,4 @@
+# Libraries used:
+
+bs4
+requests
