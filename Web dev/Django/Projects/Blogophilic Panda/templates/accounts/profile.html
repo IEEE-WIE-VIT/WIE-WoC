@@ -1,0 +1,686 @@
+{% extends "base.html" %}
+{% load get_post_Cat %}
+{% load static %}
+
+{% block content %}
+<title>Blogophilic Panda | {{ user_det.username }} Profile</title>
+<link rel="stylesheet" href="{% static 'css/blogs/home.css' %}">
+<section id="hero">
+    <div class="container-xl">
+        <div class="row gy-4 d-flex flex-row flex-nowrap my-5 align-items-center">
+            <li class="list-inline-item" style="width: auto;">
+                <img src="{{ profile_det.image.url }}" class="author rounded-circle" alt="" style="height: 200px; width: 200px;">
+            </li>
+            <div class="h4 text-dark">
+                <b>Username: </b>{{ user_det.username }}<br>
+                <b>Name: </b>{{ user_det.first_name }} {{ user_det.last_name }}<br>
+                {% if user.username == user_det.username %}
+                <b>Email: </b>{{ user_det.email }}<br>
+                {% endif %}
+            </div>
+        </div>
+        <div class="row gy-4">
+            <div class="col-lg-12">
+                <div class="post-tabs rounded bordered">
+                    <ul class="nav nav-tabs nav-pills nav-fill nav-category" id="postTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button aria-controls="all" aria-selected="true" class="nav-link active"
+                                data-bs-target="#all" data-bs-toggle="tab" id="all-tab" role="tab"
+                                type="submit">
+                                All
+                            </button>
+                        </li>
+                        {% for tag in tags %}
+                        <li class="nav-item" role="presentation">
+                            <button aria-controls="{{ tag }}" aria-selected="false" class="nav-link"
+                                data-bs-target="#{{ tag }}" data-bs-toggle="tab" id="{{ tag }}-tab" role="tab"
+                                type="submit">
+                                {{ tag }}
+                            </button>
+                        </li>
+                        {% endfor %}    
+                    </ul>
+                    <div class="tab-content" id="postsTabContent">
+                    <div class="row tab-pane fade show active" id="all" aria-labelledby="all-tab" role="tabpanel">                        
+                        {% for blog in blogs %}
+                        <div class="col-md-12 col-sm-6">
+                            <div class="post post-list clearfix">
+                                <div class="thumb rounded">
+                                    <a href="" class="category-badge position-absolute">{{ tags|get_post_Cat:blog.category }}</a>
+                                    <a href="{% url 'blog_details' the_slug=blog.slug %}">
+                                        <div class="inner">
+                                            <img src="/media/{{ blog.blog_image }}" alt="" style="height: 200px; width: 200px;">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="details">
+                                    <ul class="meta list-inline mb-3">
+                                        <li class="list-inline-item">
+                                            <img src="{{ blog.author.profile.image.url }}" class="author" alt="" style="height: 25px; width: 25px;">
+                                            {{ blog.author|capfirst }}
+                                        </li>
+                                        <li class="list-inline-item">
+                                            {{ tags|get_post_Cat:blog.category}}</a>
+                                        </li>
+                                        <li class="list-inline-item">{{ blog.publish_date|date:"D, d M Y" }}</li>
+                                        {% if user.username == user_det.username %}
+                                        <li class="list-inline-item"><a class="btn btn-danger text-white btn-sm" href="{% url 'blog_delete' the_slug=blog.slug %}">Delete</a></li>
+                                        {% endif %}
+                                    </ul>
+                                    <h5 class="post-tile">
+                                        <a href="{% url 'blog_details' the_slug=blog.slug %}">
+                                            {{ blog.blog_title }}
+                                        </a>
+                                    </h5>
+                                    <p class="excerpt mb-0">
+                                        {{ blog.blog_content|slice:":200" }}
+                                    </p>
+                                    <div class="post-bottom clearfix d-flex align-items-center">
+                                        <div class="social-share me-auto">
+                                            <button class="toggle-button icon-share"></button>
+                                            <ul class="icons list-unstyled list-inline mb-0">
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.pinterest.com/" target="_blank"><i class="fab fa-pinterest"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="row tab-pane fade show" id="Finance" aria-labelledby="Finance-tab" role="tabpanel">                        
+                        {% for blog in blogs %}
+                        {% if tags|get_post_Cat:blog.category == "Finance" %}
+                        <div class="col-md-12 col-sm-6">
+                            <div class="post post-list clearfix">
+                                <div class="thumb rounded">
+                                    <a href="" class="category-badge position-absolute">{{ tags|get_post_Cat:blog.category }}</a>
+                                    <a href="{% url 'blog_details' the_slug=blog.slug %}">
+                                        <div class="inner">
+                                            <img src="/media/{{ blog.blog_image }}" alt="" style="height: 200px; width: 200px;">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="details">
+                                    <ul class="meta list-inline mb-3">
+                                        <li class="list-inline-item">
+                                            <img src="{{ blog.author.profile.image.url }}" class="author" alt="" style="height: 25px; width: 25px;">
+                                            {{ blog.author|capfirst }}
+                                        </li>
+                                        <li class="list-inline-item">
+                                            {{ tags|get_post_Cat:blog.category}}</a>
+                                        </li>
+                                        <li class="list-inline-item">{{ blog.publish_date|date:"D, d M Y" }}</li>
+                                        {% if user.username == user_det.username %}
+                                        <li class="list-inline-item"><a class="btn btn-danger text-white btn-sm" href="{% url 'blog_delete' the_slug=blog.slug %}">Delete</a></li>
+                                        {% endif %}
+                                    </ul>
+                                    <h5 class="post-tile">
+                                        <a href="{% url 'blog_details' the_slug=blog.slug %}">
+                                            {{ blog.blog_title }}
+                                        </a>
+                                    </h5>
+                                    <p class="excerpt mb-0">
+                                        {{ blog.blog_content|slice:":200" }}
+                                    </p>
+                                    <div class="post-bottom clearfix d-flex align-items-center">
+                                        <div class="social-share me-auto">
+                                            <button class="toggle-button icon-share"></button>
+                                            <ul class="icons list-unstyled list-inline mb-0">
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.pinterest.com/" target="_blank"><i class="fab fa-pinterest"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="row tab-pane fade show" id="Fashion" aria-labelledby="Fashion-tab" role="tabpanel">                        
+                        {% for blog in blogs %}
+                        {% if tags|get_post_Cat:blog.category == "Fashion" %}
+                        <div class="col-md-12 col-sm-6">
+                            <div class="post post-list clearfix">
+                                <div class="thumb rounded">
+                                    <a href="" class="category-badge position-absolute">{{ tags|get_post_Cat:blog.category }}</a>
+                                    <a href="{% url 'blog_details' the_slug=blog.slug %}">
+                                        <div class="inner">
+                                            <img src="/media/{{ blog.blog_image }}" alt="" style="height: 200px; width: 200px;">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="details">
+                                    <ul class="meta list-inline mb-3">
+                                        <li class="list-inline-item">
+                                            <img src="{{ blog.author.profile.image.url }}" class="author" alt="" style="height: 25px; width: 25px;">
+                                            {{ blog.author|capfirst }}
+                                        </li>
+                                        <li class="list-inline-item">
+                                            {{ tags|get_post_Cat:blog.category}}</a>
+                                        </li>
+                                        <li class="list-inline-item">{{ blog.publish_date|date:"D, d M Y" }}</li>
+                                        {% if user.username == user_det.username %}
+                                        <li class="list-inline-item"><a class="btn btn-danger text-white btn-sm" href="{% url 'blog_delete' the_slug=blog.slug %}">Delete</a></li>
+                                        {% endif %}
+                                    </ul>
+                                    <h5 class="post-tile">
+                                        <a href="{% url 'blog_details' the_slug=blog.slug %}">
+                                            {{ blog.blog_title }}
+                                        </a>
+                                    </h5>
+                                    <p class="excerpt mb-0">
+                                        {{ blog.blog_content|slice:":200" }}
+                                    </p>
+                                    <div class="post-bottom clearfix d-flex align-items-center">
+                                        <div class="social-share me-auto">
+                                            <button class="toggle-button icon-share"></button>
+                                            <ul class="icons list-unstyled list-inline mb-0">
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.pinterest.com/" target="_blank"><i class="fab fa-pinterest"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="row tab-pane fade show" id="Politics" aria-labelledby="Politics-tab" role="tabpanel">                        
+                        {% for blog in blogs %}
+                        {% if tags|get_post_Cat:blog.category == "Politics" %}
+                        <div class="col-md-12 col-sm-6">
+                            <div class="post post-list clearfix">
+                                <div class="thumb rounded">
+                                    <a href="" class="category-badge position-absolute">{{ tags|get_post_Cat:blog.category }}</a>
+                                    <a href="{% url 'blog_details' the_slug=blog.slug %}">
+                                        <div class="inner">
+                                            <img src="/media/{{ blog.blog_image }}" alt="" style="height: 200px; width: 200px;">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="details">
+                                    <ul class="meta list-inline mb-3">
+                                        <li class="list-inline-item">
+                                            <img src="{{ blog.author.profile.image.url }}" class="author" alt="" style="height: 25px; width: 25px;">
+                                            {{ blog.author|capfirst }}
+                                        </li>
+                                        <li class="list-inline-item">
+                                            {{ tags|get_post_Cat:blog.category}}</a>
+                                        </li>
+                                        <li class="list-inline-item">{{ blog.publish_date|date:"D, d M Y" }}</li>
+                                        {% if user.username == user_det.username %}
+                                        <li class="list-inline-item"><a class="btn btn-danger text-white btn-sm" href="{% url 'blog_delete' the_slug=blog.slug %}">Delete</a></li>
+                                        {% endif %}
+                                    </ul>
+                                    <h5 class="post-tile">
+                                        <a href="{% url 'blog_details' the_slug=blog.slug %}">
+                                            {{ blog.blog_title }}
+                                        </a>
+                                    </h5>
+                                    <p class="excerpt mb-0">
+                                        {{ blog.blog_content|slice:":200" }}
+                                    </p>
+                                    <div class="post-bottom clearfix d-flex align-items-center">
+                                        <div class="social-share me-auto">
+                                            <button class="toggle-button icon-share"></button>
+                                            <ul class="icons list-unstyled list-inline mb-0">
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.pinterest.com/" target="_blank"><i class="fab fa-pinterest"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="row tab-pane fade show" id="Sports" aria-labelledby="Sports-tab" role="tabpanel">                        
+                        {% for blog in blogs %}
+                        {% if tags|get_post_Cat:blog.category == "Sports" %}
+                        <div class="col-md-12 col-sm-6">
+                            <div class="post post-list clearfix">
+                                <div class="thumb rounded">
+                                    <a href="" class="category-badge position-absolute">{{ tags|get_post_Cat:blog.category }}</a>
+                                    <a href="{% url 'blog_details' the_slug=blog.slug %}">
+                                        <div class="inner">
+                                            <img src="/media/{{ blog.blog_image }}" alt="" style="height: 200px; width: 200px;">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="details">
+                                    <ul class="meta list-inline mb-3">
+                                        <li class="list-inline-item">
+                                            <img src="{{ blog.author.profile.image.url }}" class="author" alt="" style="height: 25px; width: 25px;">
+                                            {{ blog.author|capfirst }}
+                                        </li>
+                                        <li class="list-inline-item">
+                                            {{ tags|get_post_Cat:blog.category}}</a>
+                                        </li>
+                                        <li class="list-inline-item">{{ blog.publish_date|date:"D, d M Y" }}</li>
+                                        {% if user.username == user_det.username %}
+                                        <li class="list-inline-item"><a class="btn btn-danger text-white btn-sm" href="{% url 'blog_delete' the_slug=blog.slug %}">Delete</a></li>
+                                        {% endif %}
+                                    </ul>
+                                    <h5 class="post-tile">
+                                        <a href="{% url 'blog_details' the_slug=blog.slug %}">
+                                            {{ blog.blog_title }}
+                                        </a>
+                                    </h5>
+                                    <p class="excerpt mb-0">
+                                        {{ blog.blog_content|slice:":200" }}
+                                    </p>
+                                    <div class="post-bottom clearfix d-flex align-items-center">
+                                        <div class="social-share me-auto">
+                                            <button class="toggle-button icon-share"></button>
+                                            <ul class="icons list-unstyled list-inline mb-0">
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.pinterest.com/" target="_blank"><i class="fab fa-pinterest"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="row tab-pane fade show" id="Travel" aria-labelledby="Travel-tab" role="tabpanel">                        
+                        {% for blog in blogs %}
+                        {% if tags|get_post_Cat:blog.category == "Travel" %}
+                        <div class="col-md-12 col-sm-6">
+                            <div class="post post-list clearfix">
+                                <div class="thumb rounded">
+                                    <a href="" class="category-badge position-absolute">{{ tags|get_post_Cat:blog.category }}</a>
+                                    <a href="{% url 'blog_details' the_slug=blog.slug %}">
+                                        <div class="inner">
+                                            <img src="/media/{{ blog.blog_image }}" alt="" style="height: 200px; width: 200px;">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="details">
+                                    <ul class="meta list-inline mb-3">
+                                        <li class="list-inline-item">
+                                            <img src="{{ blog.author.profile.image.url }}" class="author" alt="" style="height: 25px; width: 25px;">
+                                            {{ blog.author|capfirst }}
+                                        </li>
+                                        <li class="list-inline-item">
+                                            {{ tags|get_post_Cat:blog.category}}</a>
+                                        </li>
+                                        <li class="list-inline-item">{{ blog.publish_date|date:"D, d M Y" }}</li>
+                                        {% if user.username == user_det.username %}
+                                        <li class="list-inline-item"><a class="btn btn-danger text-white btn-sm" href="{% url 'blog_delete' the_slug=blog.slug %}">Delete</a></li>
+                                        {% endif %}
+                                    </ul>
+                                    <h5 class="post-tile">
+                                        <a href="{% url 'blog_details' the_slug=blog.slug %}">
+                                            {{ blog.blog_title }}
+                                        </a>
+                                    </h5>
+                                    <p class="excerpt mb-0">
+                                        {{ blog.blog_content|slice:":200" }}
+                                    </p>
+                                    <div class="post-bottom clearfix d-flex align-items-center">
+                                        <div class="social-share me-auto">
+                                            <button class="toggle-button icon-share"></button>
+                                            <ul class="icons list-unstyled list-inline mb-0">
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.pinterest.com/" target="_blank"><i class="fab fa-pinterest"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="row tab-pane fade show" id="Lifestyle" aria-labelledby="Lifestyle-tab" role="tabpanel">                        
+                        {% for blog in blogs %}
+                        {% if tags|get_post_Cat:blog.category == "Lifestyle" %}
+                        <div class="col-md-12 col-sm-6">
+                            <div class="post post-list clearfix">
+                                <div class="thumb rounded">
+                                    <a href="" class="category-badge position-absolute">{{ tags|get_post_Cat:blog.category }}</a>
+                                    <a href="{% url 'blog_details' the_slug=blog.slug %}">
+                                        <div class="inner">
+                                            <img src="/media/{{ blog.blog_image }}" alt="" style="height: 200px; width: 200px;">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="details">
+                                    <ul class="meta list-inline mb-3">
+                                        <li class="list-inline-item">
+                                            <img src="{{ blog.author.profile.image.url }}" class="author" alt="" style="height: 25px; width: 25px;">
+                                            {{ blog.author|capfirst }}
+                                        </li>
+                                        <li class="list-inline-item">
+                                            {{ tags|get_post_Cat:blog.category}}</a>
+                                        </li>
+                                        <li class="list-inline-item">{{ blog.publish_date|date:"D, d M Y" }}</li>
+                                        {% if user.username == user_det.username %}
+                                        <li class="list-inline-item"><a class="btn btn-danger text-white btn-sm" href="{% url 'blog_delete' the_slug=blog.slug %}">Delete</a></li>
+                                        {% endif %}
+                                    </ul>
+                                    <h5 class="post-tile">
+                                        <a href="{% url 'blog_details' the_slug=blog.slug %}">
+                                            {{ blog.blog_title }}
+                                        </a>
+                                    </h5>
+                                    <p class="excerpt mb-0">
+                                        {{ blog.blog_content|slice:":200" }}
+                                    </p>
+                                    <div class="post-bottom clearfix d-flex align-items-center">
+                                        <div class="social-share me-auto">
+                                            <button class="toggle-button icon-share"></button>
+                                            <ul class="icons list-unstyled list-inline mb-0">
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.pinterest.com/" target="_blank"><i class="fab fa-pinterest"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="row tab-pane fade show" id="Science" aria-labelledby="Science-tab" role="tabpanel">                        
+                        {% for blog in blogs %}
+                        {% if tags|get_post_Cat:blog.category == "Science" %}
+                        <div class="col-md-12 col-sm-6">
+                            <div class="post post-list clearfix">
+                                <div class="thumb rounded">
+                                    <a href="" class="category-badge position-absolute">{{ tags|get_post_Cat:blog.category }}</a>
+                                    <a href="{% url 'blog_details' the_slug=blog.slug %}">
+                                        <div class="inner">
+                                            <img src="/media/{{ blog.blog_image }}" alt="" style="height: 200px; width: 200px;">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="details">
+                                    <ul class="meta list-inline mb-3">
+                                        <li class="list-inline-item">
+                                            <img src="{{ blog.author.profile.image.url }}" class="author" alt="" style="height: 25px; width: 25px;">
+                                            {{ blog.author|capfirst }}
+                                        </li>
+                                        <li class="list-inline-item">
+                                            {{ tags|get_post_Cat:blog.category}}</a>
+                                        </li>
+                                        <li class="list-inline-item">{{ blog.publish_date|date:"D, d M Y" }}</li>
+                                        {% if user.username == user_det.username %}
+                                        <li class="list-inline-item"><a class="btn btn-danger text-white btn-sm" href="{% url 'blog_delete' the_slug=blog.slug %}">Delete</a></li>
+                                        {% endif %}
+                                    </ul>
+                                    <h5 class="post-tile">
+                                        <a href="{% url 'blog_details' the_slug=blog.slug %}">
+                                            {{ blog.blog_title }}
+                                        </a>
+                                    </h5>
+                                    <p class="excerpt mb-0">
+                                        {{ blog.blog_content|slice:":200" }}
+                                    </p>
+                                    <div class="post-bottom clearfix d-flex align-items-center">
+                                        <div class="social-share me-auto">
+                                            <button class="toggle-button icon-share"></button>
+                                            <ul class="icons list-unstyled list-inline mb-0">
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.pinterest.com/" target="_blank"><i class="fab fa-pinterest"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="row tab-pane fade show" id="Environment" aria-labelledby="Environment-tab" role="tabpanel">                        
+                        {% for blog in blogs %}
+                        {% if tags|get_post_Cat:blog.category == "Environment" %}
+                        <div class="col-md-12 col-sm-6">
+                            <div class="post post-list clearfix">
+                                <div class="thumb rounded">
+                                    <a href="" class="category-badge position-absolute">{{ tags|get_post_Cat:blog.category }}</a>
+                                    <a href="{% url 'blog_details' the_slug=blog.slug %}">
+                                        <div class="inner">
+                                            <img src="/media/{{ blog.blog_image }}" alt="" style="height: 200px; width: 200px;">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="details">
+                                    <ul class="meta list-inline mb-3">
+                                        <li class="list-inline-item">
+                                            <img src="{{ blog.author.profile.image.url }}" class="author" alt="" style="height: 25px; width: 25px;">
+                                            {{ blog.author|capfirst }}
+                                        </li>
+                                        <li class="list-inline-item">
+                                            {{ tags|get_post_Cat:blog.category}}</a>
+                                        </li>
+                                        <li class="list-inline-item">{{ blog.publish_date|date:"D, d M Y" }}</li>
+                                        {% if user.username == user_det.username %}
+                                        <li class="list-inline-item"><a class="btn btn-danger text-white btn-sm" href="{% url 'blog_delete' the_slug=blog.slug %}">Delete</a></li>
+                                        {% endif %}
+                                    </ul>
+                                    <h5 class="post-tile">
+                                        <a href="{% url 'blog_details' the_slug=blog.slug %}">
+                                            {{ blog.blog_title }}
+                                        </a>
+                                    </h5>
+                                    <p class="excerpt mb-0">
+                                        {{ blog.blog_content|slice:":200" }}
+                                    </p>
+                                    <div class="post-bottom clearfix d-flex align-items-center">
+                                        <div class="social-share me-auto">
+                                            <button class="toggle-button icon-share"></button>
+                                            <ul class="icons list-unstyled list-inline mb-0">
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.pinterest.com/" target="_blank"><i class="fab fa-pinterest"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="row tab-pane fade show" id="Technology" aria-labelledby="Technology-tab" role="tabpanel">                        
+                        {% for blog in blogs %}
+                        {% if tags|get_post_Cat:blog.category == "Technology" %}
+                        <div class="col-md-12 col-sm-6">
+                            <div class="post post-list clearfix">
+                                <div class="thumb rounded">
+                                    <a href="" class="category-badge position-absolute">{{ tags|get_post_Cat:blog.category }}</a>
+                                    <a href="{% url 'blog_details' the_slug=blog.slug %}">
+                                        <div class="inner">
+                                            <img src="/media/{{ blog.blog_image }}" alt="" style="height: 200px; width: 200px;">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="details">
+                                    <ul class="meta list-inline mb-3">
+                                        <li class="list-inline-item">
+                                            <img src="{{ blog.author.profile.image.url }}" class="author" alt="" style="height: 25px; width: 25px;">
+                                            {{ blog.author|capfirst }}
+                                        </li>
+                                        <li class="list-inline-item">
+                                            {{ tags|get_post_Cat:blog.category}}</a>
+                                        </li>
+                                        <li class="list-inline-item">{{ blog.publish_date|date:"D, d M Y" }}</li>
+                                        {% if user.username == user_det.username %}
+                                        <li class="list-inline-item"><a class="btn btn-danger text-white btn-sm" href="{% url 'blog_delete' the_slug=blog.slug %}">Delete</a></li>
+                                        {% endif %}
+                                    </ul>
+                                    <h5 class="post-tile">
+                                        <a href="{% url 'blog_details' the_slug=blog.slug %}">
+                                            {{ blog.blog_title }}
+                                        </a>
+                                    </h5>
+                                    <p class="excerpt mb-0">
+                                        {{ blog.blog_content|slice:":200" }}
+                                    </p>
+                                    <div class="post-bottom clearfix d-flex align-items-center">
+                                        <div class="social-share me-auto">
+                                            <button class="toggle-button icon-share"></button>
+                                            <ul class="icons list-unstyled list-inline mb-0">
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.pinterest.com/" target="_blank"><i class="fab fa-pinterest"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/slick.min.js' %}"></script>
+<script src="{% static 'js/jquery.sticky-sidebar.min.js' %}"></script>
+<script src="{% static 'js/home.js' %}"></script>
+
+{% endblock content %}

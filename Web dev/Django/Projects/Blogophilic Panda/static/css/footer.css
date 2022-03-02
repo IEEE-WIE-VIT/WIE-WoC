@@ -1,0 +1,35 @@
+
+footer {
+    margin-top: 50px;
+}
+
+footer .footer-inner {
+    border-top: 1px solid #ebebeb;
+    padding: 40px 0;
+}
+
+footer .footer-inner .copyright {
+    color: #9faabb;
+}
+
+#return-to-top {
+    color: #8f9bad;
+    font-size: 13px;
+    border: 1px solid #ebebeb;
+    text-decoration: none;
+    border-radius: 25px;
+    padding: 6px 20px;
+    z-index: 4;
+    transition: all 0.3s ease-in-out;
+}
+
+#return-to-top i {
+    font-size: 11px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+#return-to-top:hover {
+    color: #ad1deb;
+    border-color: #ad1deb;
+}

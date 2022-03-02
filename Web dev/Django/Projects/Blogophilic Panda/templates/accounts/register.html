@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<title>Blogophilic Panda | Register</title>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+
+{% for message in messages %}
+<script>
+    alert("{{message}}");
+</script>
+{% endfor %}
+<div class="bg-img row">
+    <div class="content col-4 text-center">
+       <header class="lheading" style="font-size: 1.8rem; font-weight: 900; text-decoration: underline;">SIGN UP</header>
+       <form method="POST" enctype='multipart/form-data'>
+           {% csrf_token %}
+           <div class="avatar-upload">
+            <div class="avatar-edit">
+                <input type='file' id="imageUpload" name="profile_pic" accept=".png, .jpg, .jpeg" required/>
+                <label for="imageUpload"></label>
+            </div>
+            <div class="avatar-preview">
+                <div id="imagePreview" style="background-image: url(https://d30y9cdsu7xlg0.cloudfront.net/png/138926-200.png);">
+                </div>
+            </div>
+           </div>       
+          <div class="field">
+             <span class="fa fa-user"></span>
+             <input type="text" name="first_name" required placeholder="First name">
+          </div>
+          <br><div class="field">
+            <span class="fa fa-user"></span>
+            <input type="text" name="last_name" required placeholder="Last name">
+         </div>
+        
+         <br><div class="field">
+            <span class="fa fa-envelope"></span>
+            <input type="text" name="username" required placeholder="Username">
+         </div>
+         <br><div class="field">
+            <span class="fa fa-envelope"></span>
+            <input type="text" name="email" required placeholder="Email">
+         </div>
+          <div class="field space">
+             <span class="fa fa-lock"></span>
+             <input type="password" class="pass-key" name="password" required placeholder="Password">
+             <span class="show">SHOW</span>
+          </div>
+          <div class="field space">
+            <span class="fa fa-lock"></span>
+            <input type="password" class="pass-key" name="confirm_password" required placeholder="Confirm Password">
+            <span class="show">SHOW</span>
+         </div>
+         <br> <div class="field">
+             <input type="submit" value="Register">
+          </div>
+       </form>     
+       <br><div class="signin">
+          Have an account?
+          <a href="#">Sign in here</a>
+       </div>
+    </div>
+ </div>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ <script>
+    function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            $('#imagePreview').css('background-image', 'url('+e.target.result +')');
+            $('#imagePreview').hide();
+            $('#imagePreview').fadeIn(650);
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+$("#imageUpload").change(function() {
+    readURL(this);
+});
+ </script>
+ <script>
+    const pass_field = document.querySelector('.pass-key');
+    const showBtn = document.querySelector('.show');
+    showBtn.addEventListener('click', function(){
+     if(pass_field.type === "password"){
+       pass_field.type = "text";
+       showBtn.textContent = "HIDE";
+       showBtn.style.color = "#3498db";
+     }else{
+       pass_field.type = "password";
+       showBtn.textContent = "SHOW";
+       showBtn.style.color = "#222";
+     }
+    });
+ </script>
+{% endblock content %}
