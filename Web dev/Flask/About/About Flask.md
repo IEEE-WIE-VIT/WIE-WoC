@@ -84,3 +84,51 @@ You should see something like this. Open the link to see the web page.
  * Debugger PIN: 440-888-939
  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
  ```
+
+## Project layout
+
+Flask does not define any particular layout. 
+
+A Flask application can be as simple as a single file as you saw above.
+
+However, managing a single file can become very tedious as you scale your app. 
+
+It's your decision as a developer how you want to structure your project.
+
+<details>
+          <summary>This is a structure for a small sized project</summary>
+```txt
+project-name
+├─── static/
+│    └─── style.css
+├─── templates/
+│    ├─── base.html
+│    └─── index.html
+├─── .gitignore
+├─── app.py
+├─── README.md
+├─── requirements.txt
+└─── test_client.py
+```
+</details>
+
+<details>
+          <summary>As you scale up, you'll need something more like which supports larger projects</summary>
+          
+```txt
+learn-flask
+├─── app/
+│   ├─── __init__.py
+│   ├─── app.py
+│   ├─── templates/
+│   │    ├─── base.html
+│   │    ├─── index.html
+│   └─── static/
+│        └─── style.css
+├─── tests/
+│    ├─── test_client.py
+├─── setup.py
+├─── README.md
+└─── requirements.txt
+```
+</details>
