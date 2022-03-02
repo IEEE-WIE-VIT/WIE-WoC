@@ -49,9 +49,9 @@ Enjoy the game.
 
 ## Output
 
-![]()
+![](https://github.com/prathimacode-hub/WIE-WoC/blob/gamedev/GameDev/pygame/Your%20pygame%20projects/Sliding%20Game/Images/Image-1.png)
 
-![]()
+![](https://github.com/prathimacode-hub/WIE-WoC/blob/gamedev/GameDev/pygame/Your%20pygame%20projects/Sliding%20Game/Images/Image-2.png)
 
 ## Author
 
