@@ -14,8 +14,12 @@ This application includes user login for doctor and staff to manage patients dat
 - JavaScript
 - Bootstrap
 
-The solution is developed and implemented according to the constraints to be considered while designing hospital management system
+The solution is developed and implemented according to the constraints to be considered while designing hospital management system.
 
 ## Usage
 
 This would help hospitals to attain own management system and keep a track record of databases of the patients.
+
+## Author
+
+Prathima Kadari
