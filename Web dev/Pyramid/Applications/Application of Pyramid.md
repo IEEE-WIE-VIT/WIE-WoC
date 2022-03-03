@@ -22,5 +22,4 @@
              •	start small and finish big
              
     
-    A small hello world program:
-    ![Hello world](https://user-images.githubusercontent.com/70969265/156541797-ee8c5c08-8af8-4817-b1d5-5675d3938af9.png)
+   
