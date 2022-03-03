@@ -1,12 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Jun 11 22:34:20 2020
-
-@author: Krish Naik
-"""
-
 from __future__ import division, print_function
-# coding=utf-8
 import sys
 import os
 import glob
@@ -33,8 +25,6 @@ MODEL_PATH ='model_resnet50.h5'
 model = load_model(MODEL_PATH)
 
 
-
-
 def model_predict(img_path, model):
     img = image.load_img(img_path, target_size=(224, 224))
 
@@ -58,8 +48,7 @@ def model_predict(img_path, model):
         preds="The Car is Lamborghini"
     else:
         preds="The Car Is Mercedes"
-    
-    
+        
     return preds
 
 
