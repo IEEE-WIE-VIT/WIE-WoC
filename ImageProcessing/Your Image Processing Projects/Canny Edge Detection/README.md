@@ -19,11 +19,11 @@ The Canny edge detection algorithm is composed of 5 steps:
 
 ## How does it works:
  
-Input any images that you want to apply canny edge operation.
-Reading the input images
-Displaying original images
-Applying canny() method of OpenCV to detect edges of the input images
-Displaying the Output image after applying canny edge detection algorithm
+- Input any images that you want to apply canny edge operation. <br>
+- Reading the input images. <br>
+- Displaying original images. <br>
+- Applying canny() method of OpenCV to detect edges of the input images. <br>
+- Displaying the Output image after applying canny edge detection algorithm. <br>
 
 ## Screenshots:
     
