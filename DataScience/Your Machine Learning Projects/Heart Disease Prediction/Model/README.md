@@ -2,7 +2,7 @@
 
 **GOAL**
 
-The goal of this project is to predict heart disease form features like age, cholesterol level, blood sugar level etc.
+The goal of this project is to predict heart disease from features like age, cholesterol level, blood sugar level etc.
 
 **DATASET**
 
