@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script>
+        function validate(){
+            var unm = document.getElementById("unm");
+            var pwd = document.getElementById("pwd");
+            var reg1=/staff/;
+            var reg2=/staff123/;
+            if(unm.value.trim()=="" || pwd.value.trim()==""){
+                alert("No blanks allowed");
+                return false;
+            }
+            else{
+                if ((reg1.test(unm.value)) && (reg2.test(pwd.value))){
+		            alert("This is staff login");
+		            return true;
+	            }
+	            else{
+	                alert("Incorrect username or password");
+	                return false;
+	            }
+	        }
+        }
+        function validate1(){
+            var unm1 = document.getElementById("unm1");
+            var pwd1 = document.getElementById("pwd1");
+            var reg3=/doctor/;
+            var reg4=/doctor123/;
+            if(unm1.value.trim()=="" || pwd1.value.trim()==""){
+                alert("No blanks allowed");
+                return false;
+            }
+            else{
+	            if ((reg3.test(unm1.value)) && (reg4.test(pwd1.value))){
+		            alert("This is doctor login");
+		            return true;
+	            }
+	            else{
+	                alert("Incorrect username or password");
+	                return false;
+	            }
+	        }
+        }
+    </script>
+    <style>
+        body{
+            background-image:url("{% static '/10.jpg' %}");
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+<br><br><br>
+<form onsubmit="return validate()" action="/display">
+    {% csrf_token %}
+    <div class="container">
+        <label style="font-weight: bold"><h1>Login for staff</h1></label><br>
+        <div class="form-group row">
+            <label style="font-weight: bold;" class="col-sm-2 col-form-label">Username:</label>
+            <input id="unm" type="text" placeholder="Username">
+        </div>
+        <div class="form-group row">
+            <label style="font-weight: bold;" class="col-sm-2 col-form-label">Password:</label>
+            <input id="pwd" type="password" placeholder="Password">
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</form><br><br>
+<form onsubmit="return validate1()" action="/display_doc">
+    {% csrf_token %}
+    <div class="container">
+        <label style="font-weight: bold"><h1>Login for doctor</h1></label><br>
+        <div class="form-group row">
+            <label style="font-weight: bold;" class="col-sm-2 col-form-label">Username:</label>
+            <input id="unm1" type="text" placeholder="Username">
+        </div>
+        <div class="form-group row">
+            <label style="font-weight: bold;" class="col-sm-2 col-form-label">Password:</label>
+            <input id="pwd1" type="password" placeholder="Password">
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>
+<center>
+    <a href="/home" class="btn btn-success">Home</a>
+</center>
+</body>
+</html>

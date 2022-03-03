@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Appointment</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <style>
+        body{
+            background-image:url("{% static '/django.jpg' %}");
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+<form method="POST" class="post-form" action="/app1/{{patient1.id}}">
+    {% csrf_token %}
+    <div class="container">
+    <br><br>
+        <div class="form-group row">
+            <label class="col-sm-1 col-form-label"></label>
+            <div class="col-sm-4">
+                <h3>Add Appointment</h3>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">ID:</label>
+            <div class="col-sm-4">
+                <input type="number" name="pid" disabled value="{{ patient1.pid }}"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Name:</label>
+            <div class="col-sm-4">
+                <input type="text" name="name" id="id_name" disabled maxlength="100" value="{{ patient1.name }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">:</label>
+            <div class="col-sm-4">
+                <input type="number" name="contact" id="id_contact" disabled value="{{ patient1.contact }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Address:</label>
+            <div class="col-sm-4">
+                <input type="text" name="address" id="id_address" disabled maxlength="500" value="{{ patient1.address }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Reference:</label>
+            <div class="col-sm-4">
+                <input type="text" name="reference" id="id_refernce" disabled maxlength="100" value="{{ patient1.reference }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Appointment Date:</label>
+            <div class="col-sm-4">
+                <input type="date" name="date" id="id_date" required value="{{ patient1.date }}"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Appointment Time:</label>
+            <div class="col-sm-4">
+                <input type="time" name="time" id="id_time" required value="{{ patient1.time }}"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-1 col-form-label"></label>
+            <div class="col-sm-4">
+                <button type="submit" class="btn btn-info">Add Appointment</button>
+                <a href="/display" class="btn btn-primary">Back</a></div>
+            </div>
+        </div>
+</form>
+</body>
+</html>

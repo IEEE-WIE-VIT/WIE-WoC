@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <style>
+        body{
+            background-image:url("{% static '/10.jpg' %}");
+            background-size: cover;
+        }
+        .topnav {
+            background-color: #0abab5;
+            overflow: hidden;
+            border-style: solid;
+            border-color: grey;
+            border-radius: 25px;
+        }
+        /* Style the links inside the navigation bar */
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 6px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        /* Change the color of links on hover */
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        /* Add a color to the active/current link */
+        .topnav a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .d1,.d2,.d3 {
+            background-color: white;
+            border-style: solid;
+            border-color: #E7B725;
+            border-radius: 25px;
+        }
+        .d1:hover {transform: scale(1.2);}
+        .d2:hover {transform: scale(1.2);}
+        .d3:hover {transform: scale(1.2);}
+        #d4,#d5,#d6 {font-decoration: none;}
+        .d4,.d5,.d6 {
+            background-color: white;
+            border-style: solid;
+            border-color: blue;
+            border-radius: 25px;
+        }
+        .d4:hover {transform: scale(1.2);}
+        .d5:hover {transform: scale(1.2);}
+        .d6:hover {transform: scale(1.2);}
+        #d4,#d5,#d6 {font-decoration: none;}
+        .n1, .n2, .n3, .n4{
+            background-color: lightgrey;
+            border-style: solid;
+        }
+        .news{
+            background-color: white;
+            border-style: solid;
+            border-color: darkgreen;
+            border-radius: 25px;
+        }
+        .footer{
+            background-color: #003153;
+        }
+        .r1, .r2, .r3{
+            color: white;
+        }
+        .yellow{
+            color: yellow;
+        }
+        .bt1, .bt2{
+            background-color: lightblue;
+            border-style: solid;
+            border-color: lightblue;
+            border-radius: 5px;
+            color: black;
+        }
+        .a1, .a2{
+            background-color: #7285a5;
+        }
+        .a3, .a4{
+            background-color: #008081;
+        }
+        .a5, .a6{
+            background-color: #008081;
+        }
+        .a7, .a8{
+            background-color: #7285a5;
+        }
+        #img1, #img2, #img3, #img4{
+            height: 50%;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div class="row topnav">
+        <div>
+            <img src="{% static '/logo.jpg'%}" alt="logo.jpg" class="img-thumbnail" height="50" width="175">
+        </div>
+        <div class="text-right p-3">
+            <a href="/home"><h4>Home</h4></a>
+            <a href="/log"><h4>Login</h4></a>
+            <a href="/contact"><h4>Contact</h4></a>
+            <a href="/about"><h4>About us</h4></a>
+        </div>
+    </div>
+    <div align="center">
+        <video controls height="500" autoplay>
+            <source src="{% static '/v1.mp4' type='video/mp4' %}">
+        </video>
+    </div><br>
+    <div class="row" align="center">
+        <div class="col-lg-2"></div>
+        <div class="d1 col-lg-2"><a id="d1" href="https://www.google.com/search?q=healthcare+tips&oq=healthcare+tips&aqs=chrome..69i57.4030j0j4&sourceid=chrome&ie=UTF-8"><br><img src="{% static '/heart.jpg'%}"><br><h4>Health Information</h4></a></div>
+        <div class="col-lg-1"></div>
+        <div class="d2 col-lg-2"><a id="d2" href="https://www.google.com/search?sxsrf=ACYBGNT8J1TVj1MxnwthujMz2WipQHN1iw%3A1579090517344&source=hp&ei=VQIfXri4E--E4-EPy--m4As&q=doctor+near+me&oq=doctor&gs_l=psy-ab.1.0.0i67l4j0i20i263j0i67j0j0i67l3.1152.2236..3938...0.0..0.252.872.0j5j1......0....1..gws-wiz.......35i39j0i131.j28ZeOTUE8c"><br><img src="{% static '/stscope.jpg'%}"><br><h4>Find Doctor</h4></a></div>
+        <div class="col-lg-1"></div>
+        <div class="d3 col-lg-2"><a id="d3" href="https://www.google.com/search?sxsrf=ACYBGNRTTypGBbCtQ7CHZCtrgWhWpE0HnA%3A1579090532958&ei=ZAIfXoyaOqyc4-EP18m3uAQ&q=hospital+near+me&oq=hospitalnear+me&gs_l=psy-ab.1.0.0i7i30l10.23108.24563..25985...0.3..0.159.1040.0j8......0....1..gws-wiz.......0i71j0i13.gyIxJPd0j0A"><br><img src="{% static '/location.jpg'%}"><br><h4>Hospital Near You</h4></a></div>
+        <div class="col-lg-2"></div>
+    </div><br><br>
+    <div class="row" align="center">
+        <div class="col-lg-2"></div>
+        <div class="d4 col-lg-2"><a id="d4" href="https://www.google.com/search?q=mediclaim+policy&oq=mediclame+poli&aqs=chrome.1.69i57j0l7.7572j0j9&sourceid=chrome&ie=UTF-8"><br><img src="{% static '/mediclame.jpg'%}"><br><h4>Mediclaim Help</h4></a></div>
+        <div class="col-lg-1"></div>
+        <div class="d5 col-lg-2"><a id="d5" href="https://pay.google.com/gp/w/u/0/home/activity?sctid=5038154627046689"><br><img src="{% static '/bill.jpg'%}"><br><h4>Pay My Bill</h4></a></div>
+        <div class="col-lg-1"></div>
+        <div class="d6 col-lg-2"><a id="d6" href="https://www.bajajfinserv.in/hospital-loan"><br><img src="{% static '/finanace.jpg'%}"><br><h4>Financial Assistance</h4></a></div>
+        <div class="col-lg-2"></div>
+    </div><br><br>
+
+    <div class="row">
+        <div class="a1 col-lg-1"></div>
+        <div class="a2 col-lg-5">
+            <br><img id="img1" src="{% static '/a1.jpg'%}">
+            <h4 style="color:white">Financial Counseling</h4>
+            <h6 style="color:white">To help reduce your out-of-pocket costs, our financial counselor will apply to financial assistance programs and cancer foundations on your behalf</h6>
+        </div>
+        <div class="a3 col-lg-5">
+            <br><img id="img2" src="{% static '/a2.jpg'%}">
+            <h4 style="color:white">Radiosurgery</h4>
+            <h6 style="color:white">Leading-edge, noninvasive radiosurgery — including CyberKnife® — fights cancer in just one to five treatment sessions.</h6>
+        </div>
+        <div class="a4 col-lg-1"></div>
+    </div>
+    <div class="row">
+        <div class="a5 col-lg-1"></div>
+        <div class="a6 col-lg-5">
+            <br><img id="img3" src="{% static '/a3.png'%}">
+            <h4 style="color:white">Chemotherapy & Targeted Therapy</h4>
+            <h6 style="color:white">We offer the most advanced chemotherapy available, including treatments that target your unique cancer profile.</h6>
+        </div>
+        <div class="a7 col-lg-5">
+            <br><img id="img4" src="{% static '/a4.jpg'%}">
+            <h4 style="color:white">Clinical Trials</h4>
+            <h6 style="color:white">Through genetic testing and our connection to the national cancer treatment community, we can place you in the most promising clinical trials for your cancer.</h6>
+        </div>
+        <div class="a8 col-lg-1"></div>
+    </div><br>
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+            <div class="news">
+                <h3 style="text-align: center;">More News</h3><br>
+                <div class="row">
+                    <div class="col-lg-2"></div>
+                    <div class="n1 col-lg-3"><a href="https://www.google.com/search?q=articles+regarding+hospitals&oq=articles+regarding+hospitals&aqs=chrome..69i57j0.7188j0j9&sourceid=chrome&ie=UTF-8">News & Publications</a></div>
+                    <div class="col-lg-2"></div>
+                    <div class="n2 col-lg-3"><a href="https://timesofindia.indiatimes.com/">Newsroom</a></div>
+                    <div class="col-lg-2"></div>
+                </div><br>
+                <div class="row">
+                    <div class="col-lg-2"></div>
+                    <div class="n3 col-lg-3"><a href="https://www.google.com/search?q=health+information&oq=health+inform&aqs=chrome.1.69i57j0l7.6203j0j9&sourceid=chrome&ie=UTF-8">Health Information</a></div>
+                    <div class="col-lg-2"></div>
+                    <div class="n4 col-lg-3"><a href="https://www.google.com/search?q=e+newsletters&oq=enews+letters&aqs=chrome.1.69i57j0l3.16786j0j9&sourceid=chrome&ie=UTF-8">E-Newsletters</a></div>
+                    <div class="col-lg-2"></div>
+                </div><br>
+            </div>
+        </div>
+        <div class="col-lg-2"></div>
+        <br>
+    </div><br><br>
+    <div class="footer">
+        <br>
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-3"><a class="bt1" href="https://www.naukri.com">Find Career Opportunities</a><br></div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-2"><a class="bt2" href="https://www.giveindia.org/">Make a Gift</a><br></div>
+            <div class="col-lg-5"></div>
+        </div><br>
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="r1 col-lg-2">
+                <h5 style="font-weight: bold;">Students</h5>
+                <p><a class="yellow" href="https://www.hopkinsmedicine.org/som/education-programs/index.html">Training</a></p>
+                <p><a class="yellow" href="http://jhops.org/">Student Portal</a></p>
+                <p><a class="yellow" href="https://www.hopkinsmedicine.org/som/offices/">Offices and Administrations</a></p>
+                <p><a class="yellow" href="https://www.hopkinsmedicine.org/som/about-us/about-us.html">School of Medicines</a></p>
+            </div>
+            <div class="col-lg-2"></div>
+            <div class="r2 col-lg-2">
+                <h5 style="font-weight: bold;">Health Professionals</h5>
+                <p><a class="yellow" href="https://www.hopkinsmedicine.org/health_professionals/index.html">Resources by Profession</a></p>
+                <p><a class="yellow" href="https://www.hopkinsmedicine.org/health_professionals/physicians/index.html">Refer a Patient</a></p>
+                <p><a class="yellow" href="https://www.hopkinsmedicine.org/health_professionals/physicians/hopkins_access_line/index.html">Transfer a Patient</a></p>
+                <p><a class="yellow" href="https://clinicalconnection.hopkinsmedicine.org/">Clinical Connections</a></p>
+            </div>
+            <div class="col-lg-2"></div>
+            <div class="r2 col-lg-2">
+                <h5 style="font-weight: bold;">Researchers</h5>
+                <p><a class="yellow" href="https://www.hopkinsmedicine.org/research/research-topics.html">Find a Research Topics</a></p>
+                <p><a class="yellow" href="https://www.hopkinsmedicine.org/Research/profiles/index.html">Find a Research Faculty</a></p>
+                <p><a class="yellow" href="https://www.hopkinsmedicine.org/research/centers.html">Find a Research Lab</a></p>
+                <p><a class="yellow" href="https://www.hopkinsmedicine.org/research/advancements-in-research/">Research Articles</a></p>
+            </div>
+            <div class="col-lg-1"></div>
+        </div><br>
+    </div><br>
+    <div class="row">
+        <div class="col-lg-6">
+            <h5 style="text-decoration: underline;">Language Assistance Available:</h5>
+            <h6><a href="https://www.google.com/search?q=english+to+Espa%C3%B1ol+translator&oq=english+to+Espa%C3%B1ol+translator&aqs=chrome..69i57j0l7.12029j0j4&sourceid=chrome&ie=UTF-8"> Español | አማርኛ | 繁體中文 | Français | Tagalog | Русский | Português | Italiano | Tiếng | Việt | Ɓàsɔ́ɔ̀-wùɖù-po-nyɔ |  Igbo | asusu | èdè Yorùbá | বাংলা | 日本語 | 한국어 | Kreyòl | Ayisyen | العربية | Deutsch | Polski | Ελληνικά | ગુજરાતી | ภาษาไทย | اُردُو فارسی | हिंदी | Deitsch | ខ | មែរ </a></h6>
+        </div>
+        <div class="col-lg-6">
+            <h5 style="text-decoration: underline;">Contact & Privacy Information</h5>
+            <h6>Phone Directory | Patient Care | Locations | Notice of Privacy Practices | Privacy Statement Terms & Conditions of Use | Non-Discrimination Notice</h6>
+        </div>
+    </div>
+    <br><br>
+</div>
+</body>
+</html>

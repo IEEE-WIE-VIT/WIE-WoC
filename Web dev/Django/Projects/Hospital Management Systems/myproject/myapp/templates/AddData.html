@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Data</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <style>
+        body{
+            background-image:url("{% static '/django.jpg' %}");
+            background-size: cover;
+        }
+    </style>
+    <script>
+        function validate(){
+            var reg = /^[7-9]\d{9}/;
+            if(!reg.test(document.myform.contact.value)){
+                document.getElementById("lbl").innerHTML = "Invalid";
+                document.getElementById("lbl").style.visibility = visible;
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+<form method="POST" class="post-form" action="/create">
+        {% csrf_token %}
+    <div class="container">
+    <!--<label style="font-weight: bold;"><h4>New Patient Registration</h4></label><br>-->
+    <label style="font-weight: bold;"><h5>Please fill in the form below</h5></label>
+    <h6 style="color:red"><small>*Denotes Required Field</small></h6>
+    <div class="form-group row">
+        <label style="font-weight: bold;" class="col-sm-2 col-form-label">Patient Id:<span style="color:red">*</span></label>
+        <div class="col-sm-4">
+            <input type="number" name="pid">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label style="font-weight: bold;" class="col-sm-2 col-form-label">Patient Name:<span style="color:red">*</span></label>
+        <div class="col-sm-4">
+            <input type="text" name="name">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label style="font-weight: bold;" class="col-sm-2 col-form-label">Patient Contact:<span style="color:red">*</span></label>
+        <div class="col-sm-4">
+            <input type="number" name="contact">
+            <label id="lbl" style="color:red; visibility:hidden">Invalid</label>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label style="font-weight: bold;" class="col-sm-2 col-form-label">Patient Address:<span style="color:red">*</span></label>
+        <div class="col-sm-4">
+            <input type="text" name="address">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label style="font-weight: bold;" class="col-sm-2 col-form-label">Doctor's Name:<span style="color:red">*</span></label>
+        <div class="col-sm-4">
+            <input type="text" name="doc">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label style="font-weight: bold;" class="col-sm-2 col-form-label">Tell us about your illness:<span style="color:red">*</span></label>
+        <div class="col-sm-4">
+            <input type="text" name="ill">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label style="font-weight: bold;" class="col-sm-2 col-form-label">Referred By:<span style="color:red">*</span></label>
+        <div class="col-sm-4">
+            <input type="text" name="reference">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label style="font-weight: bold;" class="col-sm-2 col-form-label">Date:<span style="color:red">*</span></label>
+        <div class="col-sm-4">
+            <input type="date" name="date">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label style="font-weight: bold;" class="col-sm-2 col-form-label">Time:<span style="color:red">*</span></label>
+        <div class="col-sm-3">
+            <input type="time" name="time">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-1 col-form-label"></label>
+        <div class="col-sm-4">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+    <br>
+    </div>
+</form>
+</body>
+</html>
