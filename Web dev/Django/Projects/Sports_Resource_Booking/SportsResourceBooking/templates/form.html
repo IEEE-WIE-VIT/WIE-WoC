@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width">
+   <title>form</title>
+   <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Andada+Pro:ital,wght@1,500&display=swap" rel="stylesheet">
+  
+    <style>
+      div.form {
+       margin: 8% 31%;
+       padding-bottom: 20px;
+       border: 2px solid black;
+       border-radius: 5px;
+       width: 40%;
+      }
+      table {
+        justify-content: center;
+      }
+      tr {
+       height: 50px;
+      }
+      td {
+        font-family: Helvetica;
+      }
+      h2 {
+        margin: 0;
+        padding: 3% 15%;
+        background-color: rgb(62, 62, 245);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 35px;
+        border-bottom: 1px solid black;
+      }
+      .details {
+        margin-top: 15px;
+        margin-left: 40px;
+      }
+      input {
+        width: 250px;
+        padding: 1px 5px;
+      }
+      option {
+        padding: 10px;
+      }
+      button {
+        width: 100px;
+        margin-left: 80px;
+        height: 30px;
+        text-decoration: none;
+        border: 1px solid black;
+        border-radius: 4px;
+        color: white;
+        background-color: rgb(56, 56, 243);
+      }
+      button:hover {
+        cursor: pointer;
+        color: white;
+      }
+     </style>
+ 
+ 
+ </head>
+ <body style="font-family: 'Andada Pro', serif;">
+   <header id="luxbar" class="luxbar-fixed">
+   <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox"/>
+   <div class="luxbar-menu luxbar-menu-right luxbar-menu-material-indigo">
+       <ul class="luxbar-navigation">
+           <li class="luxbar-header">
+             <img src="https://upload.wikimedia.org/wikipedia/en/6/68/Chaitanya_Bharathi_Institute_of_Technology_logo.png" width="60" height="60" style="margin-left:20px;">
+               <a href="#" class="luxbar-brand" >CBIT Sports Resource Booking</a>
+               <label class="luxbar-hamburger luxbar-hamburger-doublespin"
+               id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
+           </li>
+           <li class="luxbar-item"><a href="/">Home</a></li>
+           <li class="luxbar-item"><a href="form">Reserve</a></li>
+           
+           {% if user.is_authenticated %}
+               
+                <li class="luxbar-item"><a href="register/logout">Log out</a></li>
+                {% else %}
+                <li class="luxbar-item"><a href="register/signup">SignUp</a></li>
+                <li class="luxbar-item"><a href="register/login">Login</a></li>
+                {% endif %}
+          
+       </ul>
+   </div>
+</header>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ 
+
+ <form action="/reserve/addInfo/" method="post"  >
+  {% csrf_token %}
+   <center>
+      <h2>Pre-Booking Form</h2>
+      <div class="details">
+        
+        <table>
+          <tr>
+            <td><label for="rollno">Enter roll no:</label></td>
+            <td><input type="text" name='rollno' id = "idno" placeholder="Roll No" required></td>
+            
+        
+          </tr>
+          <tr>
+            <td><label for="equipment_type">Choose an Equipment:</label></td>
+            <td>
+              <select name="equipment_type" id="equipment_type" required>
+                <option value="badminton_rackets">Badminton rackets</option>
+                <option value="chess_boards">Chess boards</option>
+                <option value="carrom_boards">Carrom boards</option>
+                <option value="balls_batts">Cricket balls and bats</option>
+                <option value="table_tennis">Table tennis</option>
+                <option value="volley_ball">Volley ball</option>
+                <option value="throw_ball">Throw ball</option>
+              </select>    
+            </td>
+          </tr>
+          <tr>
+            <td> <label for="no_of_items">Number of items:</label></td>
+            <td><input type="number" name='no_of_items' placeholder="No of items" id="noOfitems" required></td>
+          </tr>
+          <tr>
+            <td> <label for="timings">Enter time:</label></td>
+            <td><input type="time" name="timings" id="times" required></td>
+          </tr>
+          <tr>
+            <td><button>Submit</button></td>
+            <td></td>
+          </tr>
+        </table>
+      </center>
+      </div>
+     
+ </form>
+ </body>
+</html>
