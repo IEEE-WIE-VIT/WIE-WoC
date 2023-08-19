@@ -1,4 +1,4 @@
-def insertionSort(self, Arr):
+def insertionSort(Arr):
         
         for i in range(1, len(Arr)):   
             key = Arr[i]   
