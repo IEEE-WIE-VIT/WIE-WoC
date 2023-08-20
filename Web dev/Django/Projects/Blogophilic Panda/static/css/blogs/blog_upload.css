@@ -1,0 +1,233 @@
+.upload_blog {
+    text-align: center;
+    justify-content: center;
+}
+
+.upload_blog form {
+    background: linear-gradient(315deg, #6e72fc 0%, #ad1deb 74%);
+    border-radius: 15px;
+    position: relative;
+}
+
+.upload_blog h1 {
+    margin-top: 15px;
+    color: #fff;
+    font-size: 2rem;
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.upload_blog input[type="text"],
+.upload_blog input[type="password"],
+input[type="date"],
+.upload_blog input[type="datetime"],
+.upload_blog input[type="email"],
+.upload_blog input[type="number"],
+.upload_blog input[type="search"],
+.upload_blog input[type="tel"],
+.upload_blog input[type="time"],
+.upload_blog input[type="url"],
+.upload_blog textarea,
+.upload_blog select {
+    width: 100%;
+    outline: none;
+    border: 2px solid #fafafa;
+    background: rgba(255, 255, 255, 0);
+    padding: 0.6rem 1.2rem;
+    color: white;
+    font-weight: 900;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    border-radius: 25px;
+    transition: 0.3s;
+    margin-bottom: 15px;
+}
+
+.upload_blog textarea {
+    padding: 0.8rem 1.2rem;
+    height: 150px;
+    border-radius: 22px;
+    resize: none;
+    overflow-y: auto;
+}
+
+textarea::-webkit-scrollbar {
+    background-color: #ffffff00;
+    width: 5px;
+    border-radius: 22px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 20px;
+}
+
+.upload_blog button {
+    padding: 15px 39px;
+    color: white;
+    background: #5D3FD3;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    font-style: normal;
+    border-radius: 10px;
+    width: 100%;
+    border: 5px solid #6e73fc00;
+    box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+    margin-bottom: 10px;
+}
+
+.upload_blog fieldset {
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.upload_blog legend {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.upload_blog label {
+    display: block;
+    font-weight: 600;
+    color: whitesmoke;
+}
+
+.upload_blog label.light {
+    font-weight: 500;
+    display: inline;
+}
+
+
+.upload_blog .number {
+    background-color: #ad1deb;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 4px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-radius: 100%;
+}
+
+@media screen and (min-width: 480px) {
+
+    .upload_blog form {
+        max-width: 480px;
+    }
+
+}
+
+.upload_blog .file-upload {
+    background-color: rgba(255, 255, 255, 0);
+    width: 100% !important;
+    margin: 0 auto;
+    padding: 10px;
+    justify-content: center;
+    text-align: center;
+}
+
+.upload_blog .file-upload-btn {
+    width: 50%;
+    margin: 0;
+    color: #fff;
+    background: #ad1deb;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    transition: all .2s ease;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.upload_blog .file-upload-btn:hover,
+.upload_blog .upload:hover {
+    background: #8f2abb;
+    color: white;
+    transition: all .2s ease;
+    cursor: pointer;
+}
+
+.upload_blog .file-upload-btn:active {
+    border: 0;
+    transition: all .2s ease;
+}
+
+.upload_blog .file-upload-content {
+    display: none;
+    text-align: center;
+}
+
+.file-upload-input {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.upload_blog .image-upload-wrap {
+    border: 4px dashed white;
+    position: relative;
+    width: 100%;
+}
+
+.upload_blog .image-dropping,
+.upload_blog .image-upload-wrap:hover {
+
+    border: 4px dashed whitesmoke;
+}
+
+.upload_blog .image-title-wrap {
+    padding: 0 15px 15px 15px;
+    color: #ffffff;
+}
+
+.upload_blog .drag-text {
+    text-align: center;
+}
+
+.upload_blog .drag-text h4 {
+    text-transform: uppercase;
+    color: white;
+    padding: 60px 0;
+}
+
+.upload_blog .file-upload-image {
+    max-height: 200px;
+    max-width: 200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.upload_blog .remove-image {
+    width: 50%;
+    margin: 0;
+    color: #fff;
+    background: #cd4535;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    transition: all .2s ease;
+    outline: none;
+}
+
+.upload_blog .remove-image:hover {
+    background: #c13b2a;
+    color: #ffffff;
+    transition: all .2s ease;
+    cursor: pointer;
+}
+
+.upload_blog .remove-image:active {
+    border: 0;
+    transition: all .2s ease;
+}

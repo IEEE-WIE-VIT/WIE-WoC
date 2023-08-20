@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style>
+        a {
+            color: #664455;
+            text-decoration: none;
+        }
+        a:hover {
+            color: black;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Andada+Pro:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Andada+Pro:ital,wght@1,500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header id="luxbar" class="luxbar-fixed">
+        <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox"/>
+        <div class="luxbar-menu luxbar-menu-right luxbar-menu-material-indigo">
+            <ul class="luxbar-navigation">
+                <li class="luxbar-header">
+                  <img src="https://upload.wikimedia.org/wikipedia/en/6/68/Chaitanya_Bharathi_Institute_of_Technology_logo.png" width="60" height="60" style="margin-left:20px;">
+                    <a href="#" class="luxbar-brand" >CBIT Sports Resource Booking</a>
+                    <label class="luxbar-hamburger luxbar-hamburger-doublespin"
+                    id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
+                </li>
+                <li class="luxbar-item"><a href="/">Home</a></li>
+
+                {% if request.user.email == "student" %}
+                <li class="luxbar-item"><a href="form">Reserve</a></li>
+                {% elif request.user.email == "admin" %}
+                <li class="luxbar-item"><a href="">Requests</a></li>
+                {% endif %}     
+                {% if user.is_authenticated %}
+               
+                <li class="luxbar-item"><a href="register/logout">Log out</a></li>
+                {% else %}
+                <li class="luxbar-item"><a href="register/signup">SignUp</a></li>
+                <li class="luxbar-item"><a href="register/login">Login</a></li>
+                {% endif %}  
+               
+            </ul>
+        </div>
+     </header>
+
+     <br><br><br><br>
+     {% for value in values %}
+     <br>
+     <div>
+        ID no : {{value.idno}}<br>
+        Phno : {{value.phno}}<br>
+        Equipment type : {{value.equipment_type}}<br>
+        noOfitems : {{value.noOfitems}}<br>
+        Time : {{value.times}}<br>
+      
+        <form action="{% url 'accept' value=value.phno  %}" method="post">
+            {% csrf_token %}           
+            <button type="submit" name='phno' class="viewButton" id="accept">Accept it</button>
+        </form>
+        
+        <form action="{% url 'reject' value=value.phno  %}" method="post">
+            {% csrf_token %}      
+            <button type="submit" name='phno' class="viewButton">Reject it</button>
+        </form>
+        
+        
+        
+     </div>
+     <br>
+     {% endfor %}
+    
+</body>

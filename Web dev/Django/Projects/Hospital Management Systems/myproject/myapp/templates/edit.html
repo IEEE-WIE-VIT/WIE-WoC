@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Data</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <style>
+        body{
+            background-image:url("{% static '/django.jpg' %}");
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+<form method="POST" class="post-form" action="/update/{{patient1.id}}">
+        {% csrf_token %}
+    <div class="container">
+    <br>
+        <div class="form-group row">
+            <label style="font-weight: bold;" class="col-sm-1 col-form-label"></label>
+            <div class="col-sm-4">
+                <h3>Update Details</h3>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label style="font-weight: bold;" class="col-sm-2 col-form-label">Patient Id:</label>
+            <div class="col-sm-4">
+                <input type="number" name="pid" value="{{ patient1.pid }}"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label style="font-weight: bold;" class="col-sm-2 col-form-label">Patient Name:</label>
+            <div class="col-sm-4">
+                <input type="text" name="name" id="id_name" required value="{{ patient1.name }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label style="font-weight: bold;" class="col-sm-2 col-form-label">Patient Contact:</label>
+            <div class="col-sm-4">
+                <input type="number" name="contact" id="id_contact" required value="{{ patient1.contact }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label style="font-weight: bold;" class="col-sm-2 col-form-label">Patient Address:</label>
+            <div class="col-sm-4">
+                <input type="text" name="address" id="id_address" required value="{{ patient1.address }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label style="font-weight: bold;" class="col-sm-2 col-form-label">Doctor's Name:</label>
+            <div class="col-sm-4">
+                <input type="text" name="doc" id="id_doc" required value="{{ patient1.doc }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label style="font-weight: bold;" class="col-sm-2 col-form-label">Patient Reference:</label>
+            <div class="col-sm-4">
+                <input type="text" name="reference" id="id_reference" required value="{{ patient1.reference }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label style="font-weight: bold;" class="col-sm-2 col-form-label">Illness:</label>
+            <div class="col-sm-4">
+                <input type="text" name="ill" id="id_ill" required value="{{ patient1.ill }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label style="font-weight: bold;" class="col-sm-2 col-form-label">Date:</label>
+            <div class="col-sm-4">
+                <input type="date" name="date" id="id_date" required value="{{ patient1.date }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label style="font-weight: bold;" class="col-sm-2 col-form-label">Time:</label>
+            <div class="col-sm-4">
+                <input type="time" name="time" id="id_time" required value="{{ patient1.time }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-1 col-form-label"></label>
+            <div class="col-sm-4">
+                <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+</html>

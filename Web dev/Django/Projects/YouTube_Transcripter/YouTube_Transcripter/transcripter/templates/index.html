@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube transcripter</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <style>
+        body{
+           /*background-image: url("https://i.pinimg.com/originals/82/88/12/828812007e1f0c5019ae46f4a29bcda2.jpg");*/
+            /*background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkZkDTtSixMqZi5JrJLmTQsDX09QpqI4dop49GNomGkDJPoOXM2QWYa-N_lPgjEPMzsVk&usqp=CAU");*/
+           background-image: url("https://files.123freevectors.com/wp-content/original/142193-blue-and-white-simple-background.jpg");
+            background-size:cover;
+        }
+        .body{
+            margin-top:140px;
+        }
+        .row{
+            margin-left:300px;
+        }
+        .field{
+            border:1px solid black;
+        }
+        
+    </style>
+</head>
+<body>
+  
+    <div class="container body">
+        <center>
+    <p class="display-4"><b>Hey there ! &#x1F44B</b></p>
+    <form action="convert" method='post'>
+        {% csrf_token %}
+        <p style="font-size: 25px;"> Are you tired of listening lengthy videos &#x1F635
+        <br>Getting bore by writing down for minutes? &#x1F62A
+        <br>Then here is your solution , just drop the you tube link and get the whole text in seconds   &#x1F973. <br> So what are you waiting for , go and give it a try  &#x1F60E </p>
+        <p style="font-size: 33px;">Drop the youtube link and just wait for few seconds &#x1F609: </p><br>
+        <div class="row">
+        <div class="col-6">
+            <input class="form-control field" type="text" name="link" required>
+        </div>
+        <div class="col-auto">
+            <input class="btn btn-primary" type="submit">
+        </div>
+        </div>
+    </form>
+    </center>
+    </div>
+   
+
+</body>
+</html>
