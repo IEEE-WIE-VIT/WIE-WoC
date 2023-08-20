@@ -13,15 +13,15 @@
 3. Theta notations : used to measure the average case scenerio of an alogrithm .It generally gives the average bound. 
    - In simple words we can say that omega notation is used to measure the average time that an algorithm can take to execute.
 
-How to find the time complexity of an algorithm with aymptotic notation?
+How to find the time complexity of an algorithm with asymptotic notation?
 `let 'n' -> size of input`
-then , f(n) will represent the number of instruction executed for input value 'n'.
-## Lets try to find the time complexities with asymptotic notation with help of example:
+then, f(n) will represent the number of instructions executed for input value 'n'.
+## Let's try to find the time complexities with asymptotic notation with help of example:
 
 <br>
 
 Ex 1. :
-we have a main function which will execute a for loop to print hello world 'n' times.
+We have a main function which will execute a for loop to print hello world 'n' times.
 
 ```python
   main(){
@@ -49,7 +49,7 @@ lets break the code
 <br>
 
 Ex 2. :
-Lets check another example ,this time with multiple for-loop
+Lets check another example,this time with multiple for-loop
 ```python
   void search(int arr[] ,int size){
     for(int i = 0 ;i <= size ;i++){
@@ -71,13 +71,13 @@ swap(arr[j] ,arr[j+1]); -> This instruction will execute for 1 time
 f(n) = n * n + 1 + 1;
 f(n) = n^2 + 2;
 ```
-> we can ignore the constant value '2' ,therefore
+> We can ignore the constant value '2',therefore
 > the worst case complexity will be** *O(n^2)***
 
 <br>
 
 Ex 3. :
-Note : in case of worst if-else statements as well ,we will compute the complexity from if-else ,which ever block has larger complexity
+Note: in case of worst if-else statements as well,we will compute the complexity from if-else , whichever block has larger complexity
 ```python
   if(val == 1){ 
     printf("hello world"); 
@@ -89,5 +89,5 @@ Note : in case of worst if-else statements as well ,we will compute the complexi
   }
 ```
 
-> in this we can see that else part has worst case complexity O(n) whereas if block will have O(1) worst case complexity
-> therefore we will consider the worst case complexity as O(n) for the above example
+> In this we can see that the else part has worst-case complexity O(n) whereas if the block will have O(1) worst-case complexity
+> Therefore we will consider the worst-case complexity as O(n) for the above example
