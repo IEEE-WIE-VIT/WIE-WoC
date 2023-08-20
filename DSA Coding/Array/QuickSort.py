@@ -9,6 +9,6 @@ def quickSort(arr):
     return quickSort(left) + [pivot] + quickSort(right)
 
 
-n = int(input("Enter number: "))
+
 arr = list(map(int, input().split()))
 print(*quickSort(arr))
