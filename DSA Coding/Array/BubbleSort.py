@@ -9,4 +9,4 @@ def bubbleSort(arr):
 
 n = int(input("Enter number: "))
 arr = list(map(int, input().split()))
-print(*bubbleSort(arr))
+print(bubbleSort(arr))
