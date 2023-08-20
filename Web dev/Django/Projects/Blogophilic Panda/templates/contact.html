@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<title>Blogophilic Panda | Contact Us</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/contact.css' %}">
+{% for message in messages %}
+<script>
+    alert("{{message}}");
+</script>
+{% endfor %}
+<div class="container contact">
+  <div class="form">
+    <div class="contact-info">
+      <h3 class="title">Let's get in touch</h3>
+      <p class="text">
+        Want to get in touch? We'd love to hear from you. Here's how you can reach us...
+      </p>
+
+      <div class="info">
+        <div class="information">
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> Vellore Tamil Nadu</li>
+          </ul>
+        </div>
+        <div class="information">
+          <ul>
+            <li><i class="fas fa-envelope"></i> contact@blogophilicpanda.com</li>
+          </ul>            
+        </div>
+        <div class="information">
+          <ul>
+            <li><i class="fas fa-mobile-alt"></i> +9475661228</li>
+          </ul>            
+        </div>
+      </div>
+
+      <div class="social-media">
+        <p>Connect with us :</p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.twitter.com/" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://www.instagram.com/" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <span class="circle one"></span>
+      <span class="circle two"></span>
+
+      <form autocomplete="off" method="POST">
+        {% csrf_token %}
+        <h3 class="title">Contact us</h3>
+        <div class="input-container">
+          <input type="text" name="name" class="input" />
+          <label for="">Name</label>
+          <span>Name</span>
+        </div>
+        <div class="input-container">
+          <input type="email" name="email" class="input" />
+          <label for="">Email</label>
+          <span>Email</span>
+        </div>
+        <div class="input-container">
+          <input type="tel" name="phone" class="input" />
+          <label for="">Phone</label>
+          <span>Phone</span>
+        </div>
+        <div class="input-container textarea">
+          <textarea name="message" class="input"></textarea>
+          <label for="">Message</label>
+          <span>Message</span>
+        </div>
+        <input type="submit" value="Send" class="btn" />
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="{% static 'js/contact.js' %}"></script>
+{% endblock content %}

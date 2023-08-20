@@ -1,0 +1,6 @@
+Libraries used: 
+
+BeautifulSoup
+Selenium
+Pandas
+requests

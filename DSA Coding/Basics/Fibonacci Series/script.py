@@ -1,0 +1,11 @@
+Number = int(input("Enter the number till what you want to print the Fibonacci series : "))
+Sum = 1
+Temp_Store1 = 0
+Temp_Store2 = 1
+print(Temp_Store1, end=" ")
+print(Temp_Store2, end=" ")
+while (Sum <= Number):
+    print(Sum, end=" ")
+    Sum = Temp_Store1 + Temp_Store2
+    Temp_Store1 = Temp_Store2
+    Temp_Store2 = Sum

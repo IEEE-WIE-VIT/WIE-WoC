@@ -1,0 +1,4 @@
+Install speedtest-cli package
+
+import tkinter
+import speedtest

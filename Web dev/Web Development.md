@@ -44,3 +44,60 @@ Requests is a library that allows you to send HTTP requests easily, which is use
 
 ### Dash
 Another useful library is Dash, which helps those developing web applications that have to do with data visualization. Built on top of Flask, it offers features like charts, graphs, dashboards, and more.
+
+
+# TOPICS FOR CONTRIBUTION
+
+## Django 
+- About Django - Code + Documentation
+- Your Django Projects - Your own built small projects. Code.
+- Django REST Framework  - Code + Documentation
+- How to build a project in Django  - Code + Documentation
+- Django with Databases  - Code + Documentation
+- Django Mailing  - Code + Documentation
+
+## Flask 
+- About Flask  - Code + Documentation
+- Your Flask Projects - Your own built small projects. Code.
+- How to build a project using Flask  - Code + Documentation
+- Flask with Databases - Code + Documentation
+- Flask Mailing - Code + Documentation
+
+## Pyramid
+- About Pyramid- Code + Documentation
+- Your pyramid projects- Your own built small projects. Code.
+- How to build a project using Pyramid framework- Code + Documentation
+
+## Web2Py
+- About Web2Py - Code + Documentation
+- Your Web2Py projects- Your own built small projects. Code.
+- How to build a project using Web2Py framework- Code + Documentation
+
+## Turbogears
+- About Turbogears- Code + Documentation
+- Your Turbogears projects- Your own built small projects. Code.
+- How to build a project using Turbogears framework- Code + Documentation
+
+## Scrapy
+- About Scrapy- Code + Documentation
+- Your Scrapy projects- Your own built small projects. Code.
+- How to build a project using Scrapy- Code + Documentation
+- Applications of Scrapy- Code + Documentation
+
+## Zappa
+- About Zappa- Code + Documentation
+- Your Zappa projects- Your own built small projects. Code.
+- How to build a project using Zappa - Code + Documentation
+- Applications of Zappa- Code + Documentation
+
+## Requests
+- About Requests- Code + Documentation
+- Your Requests projects- Your own built small projects. Code.
+- How to build a project using Requests- Code + Documentation
+- Applications of Requests- Code + Documentation
+
+## Dash
+- About Dash- Code + Documentation
+- Your Dash projects- Your own built small projects. Code.
+- How to build a project using Dash- Code + Documentation
+- Applications of Dash- Code + Documentation

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Display</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <style>
+        body{
+            background-image:url("{% static '/django.jpg' %}");
+            background-size: cover;
+        }
+    </style>
+    <script>
+    function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 1; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[4];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+function sortTable() {
+  var table, rows, switching, i, x, y, shouldSwitch;
+  table = document.getElementById("myTable");
+  switching = true;
+  /*Make a loop that will continue until
+  no switching has been done:*/
+  while (switching) {
+    //start by saying: no switching is done:
+    switching = false;
+    rows = table.rows;
+    /*Loop through all table rows (except the
+    first, which contains table headers):*/
+    for (i = 1; i < (rows.length - 1); i++) {
+      //start by saying there should be no switching:
+      shouldSwitch = false;
+      /*Get the two elements you want to compare,
+      one from current row and one from the next:*/
+      x = rows[i].getElementsByTagName("td")[4];
+      y = rows[i + 1].getElementsByTagName("td")[4];
+      //check if the two rows should switch place:
+      if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+        //if so, mark as a switch and break the loop:
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+      /*If a switch has been marked, make the switch
+      and mark that a switch has been done:*/
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    }
+  }
+}
+</script>
+</head>
+<body>
+<div class="container">
+    <br><br>
+    <label style="font-weight: bold;"><h3>Display Records</h3></label><br>
+    <div class="row">
+        <button class="btn btn-primary" onclick="sortTable()">Sort</button>
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Doctor name..">
+    </div><br><br>
+<table id="myTable" style="border:3px solid black;" align="center" class="table table-condensed table-bordered table-hover">
+    {% csrf_token %}
+    <thead bgcolor="lightblue" border="1">
+    <tr class="info">
+        <td><h5 style="font-family:Times New Roman; font-weight: bold;" align="center" >ID</h5></td>
+        <td><h5 style="font-family:Times New Roman; font-weight: bold;" align="center" >Name</h5></td>
+        <td><h5 style="font-family:Times New Roman; font-weight: bold;" align="center" >Contact</h5></td>
+        <td><h5 style="font-family:Times New Roman; font-weight: bold;" align="center" >Address</h5></td>
+        <td><h5 style="font-family:Times New Roman; font-weight: bold;" align="center" >Doctor</h5></td>
+        <td><h5 style="font-family:Times New Roman; font-weight: bold;" align="center" >Illness</h5></td>
+        <td><h5 style="font-family:Times New Roman; font-weight: bold;" align="center" >Referred By</h5></td>
+        <td><h5 style="font-family:Times New Roman; font-weight: bold;" align="center" >Date</h5></td>
+        <td><h5 style="font-family:Times New Roman; font-weight: bold;" align="center" >Time</h5></td>
+    </tr></thead>
+    {% for patient1 in patient1 %}
+    <tbody bgcolor="white"><tr>
+        <td><h6 align="center">{{ patient1.pid }}</h6> </td>
+        <td><h6 align="center">{{ patient1.name }}</h6> </td>
+        <td><h6 align="center">{{ patient1.contact }}</h6> </td>
+        <td><h6 align="center">{{ patient1.address }}</h6> </td>
+        <td><h6 align="center">{{ patient1.doc }}</h6> </td>
+        <td><h6 align="center">{{ patient1.ill }}</h6> </td>
+        <td><h6 align="center">{{ patient1.reference }}</h6> </td>
+        <td><h6 align="center">{{ patient1.date }}</h6> </td>
+        <td><h6 align="center">{{ patient1.time }}</h6> </td>
+    </tr></tbody>
+    {% endfor %}
+</table>
+    <center>
+        <a href="/log" class="btn btn-primary">Logout</a>
+    </center>
+</div>
+</body>
+</html>
